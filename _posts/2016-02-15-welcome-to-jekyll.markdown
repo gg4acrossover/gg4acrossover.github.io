@@ -8,7 +8,7 @@ Thời gian đầu làm việc với obj-c mình khá băn khoăn trong việc s
 
 Vì những cái sắp trình bày có liên quan đến bộ nhớ, mình sẽ nói qua về stack và heap trước khi đi vào vấn đề chính.
 
-#Stack
+Stack
 
 Stack là vùng bộ nhớ để chứa biến local, biến tạm. Khi bạn tạo ra đối tượng và được lưu trên stack thì việc quản lý bộ nhớ diễn ra một cách tự động. Thế nên bạn không phải bận tâm đến vấn đề memory leak.
 
