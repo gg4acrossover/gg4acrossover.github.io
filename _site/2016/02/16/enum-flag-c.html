@@ -77,13 +77,14 @@
 <p>Đây là một trường hợp tuyệt vời để áp dụng enum flag, khi đó ta chỉ cần một biến duy nhất để lưu trữ thuộc tính, tránh code rườm rà.
 Giống như cách define sau</p>
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"> 
-<span class="cp">#define KEY_UP       (1 &lt;&lt; 0)  // 000001
+<p><code class="highlighter-rouge">cpp
+#define KEY_UP       (1 &lt;&lt; 0)  // 000001
 #define KEY_RIGHT    (1 &lt;&lt; 1)  // 000010
 #define KEY_DOWN     (1 &lt;&lt; 2)  // 000100
 #define KEY_LEFT     (1 &lt;&lt; 3)  // 001000
 #define KEY_BUTTON1  (1 &lt;&lt; 4)  // 010000
-#define KEY_BUTTON2  (1 &lt;&lt; 5)  // 100000</span></code></pre></figure>
+#define KEY_BUTTON2  (1 &lt;&lt; 5)  // 100000
+</code></p>
 
 <p>Tuy nhiên mình sẽ không dùng define mà dùng enum làm cờ.</p>
 

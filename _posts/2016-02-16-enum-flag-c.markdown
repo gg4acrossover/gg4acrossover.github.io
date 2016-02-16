@@ -16,14 +16,14 @@ Sử dụng bitwise trong lập trình nói chung làm cho code của bạn tr�
 Đây là một trường hợp tuyệt vời để áp dụng enum flag, khi đó ta chỉ cần một biến duy nhất để lưu trữ thuộc tính, tránh code rườm rà.
 Giống như cách define sau
 
-{% highlight cpp %} 
+``` cpp
 #define KEY_UP       (1 << 0)  // 000001
 #define KEY_RIGHT    (1 << 1)  // 000010
 #define KEY_DOWN     (1 << 2)  // 000100
 #define KEY_LEFT     (1 << 3)  // 001000
 #define KEY_BUTTON1  (1 << 4)  // 010000
 #define KEY_BUTTON2  (1 << 5)  // 100000
-{% endhighlight %} 
+```
 
 Tuy nhiên mình sẽ không dùng define mà dùng enum làm cờ.
 
