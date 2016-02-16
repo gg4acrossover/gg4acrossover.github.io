@@ -88,33 +88,36 @@ Giống như cách define sau</p>
 
 <p>Tuy nhiên mình sẽ không dùng define mà dùng enum làm cờ.</p>
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"> 
-<span class="k">enum</span> <span class="n">FLAG</span>
-<span class="p">{</span>
-         <span class="n">UNKNOW</span>    <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> 
-         <span class="n">NORMAL</span>    <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span><span class="p">,</span>
-         <span class="n">MAGIC</span>     <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">,</span>
-         <span class="n">CHAO</span>      <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span>
-<span class="p">};</span></code></pre></figure>
+<p><code class="highlighter-rouge">cpp
+enum FLAG
+{
+         UNKNOW    = 0, 
+         NORMAL    = 1 &lt;&lt; 0,
+         MAGIC     = 1 &lt;&lt; 1,
+         CHAO      = 1 &lt;&lt; 2
+};
+</code></p>
 
 <p>Hàm main</p>
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
-<span class="p">{</span>
-         <span class="n">FLAG</span> <span class="n">flag</span> <span class="o">=</span> <span class="n">MAGIC</span> <span class="o">|</span> <span class="n">CHAO</span><span class="p">;</span>
+<p>``` cpp
+int main(int argc, const char * argv[])
+{
+         FLAG flag = MAGIC | CHAO;</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>     if( flag &amp; NORMAL)
+     {
+     	cout&lt;&lt;"Normal"&lt;&lt;endl;
+     }   
    
-         <span class="k">if</span><span class="p">(</span> <span class="n">flag</span> <span class="o">&amp;</span> <span class="n">NORMAL</span><span class="p">)</span>
-         <span class="p">{</span>
-         	<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"Normal"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
-         <span class="p">}</span>   
+     if( flag &amp; CHAO)
+     {
+   		cout&lt;&lt;"Chao"&lt;&lt;endl;      	
+     }
    
-         <span class="k">if</span><span class="p">(</span> <span class="n">flag</span> <span class="o">&amp;</span> <span class="n">CHAO</span><span class="p">)</span>
-         <span class="p">{</span>
-   		<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"Chao"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>      	
-         <span class="p">}</span>
-   
-         <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
+     return 0; } ```
+</code></pre>
+</div>
 
 <table>
   <tbody>
@@ -125,17 +128,21 @@ Giống như cách define sau</p>
   </tbody>
 </table>
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kr">inline</span> <span class="n">FLAG</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span><span class="n">FLAG</span> <span class="n">a</span><span class="p">,</span> <span class="n">FLAG</span> <span class="n">b</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">FLAG</span><span class="o">&gt;</span> <span class="p">(</span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">|</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">));</span>
-<span class="p">}</span></code></pre></figure>
+<p><code class="highlighter-rouge">cpp
+inline FLAG operator|(FLAG a, FLAG b)
+{
+    return static_cast&lt;FLAG&gt; (static_cast&lt;int&gt;(a) | static_cast&lt;int&gt;(b));
+}
+</code></p>
 
 <p>OK, bây giờ code đã có thể chạy được. Giải thích một chút nhé:
 Khi ta thực hiện phép toán | (OR) giữa CHAO và MAGIC thì ta được (gán cờ để nhân vật mang 2 thuộc tính)</p>
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">MAGIC</span>             <span class="mo">00000010</span> 
-<span class="n">CHAO</span>              <span class="mo">00000100</span> 
-<span class="n">MAGIC</span> <span class="o">|</span> <span class="n">CHAO</span>      <span class="mo">00000110</span></code></pre></figure>
+<p><code class="highlighter-rouge">cpp
+MAGIC             00000010 
+CHAO              00000100 
+MAGIC | CHAO      00000110
+</code></p>
 
 <table>
   <tbody>
@@ -146,9 +153,11 @@ Khi ta thực hiện phép toán | (OR) giữa CHAO và MAGIC thì ta được (
   </tbody>
 </table>
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">MAGIC</span> <span class="o">|</span> <span class="n">CHAO</span>      <span class="mo">00000110</span> 
-<span class="n">CHAO</span>              <span class="mo">00000100</span>   
-<span class="n">MAGIC</span> <span class="o">&amp;</span> <span class="n">CHAO</span>      <span class="mo">00000100</span></code></pre></figure>
+<p><code class="highlighter-rouge">cpp
+MAGIC | CHAO      00000110 
+CHAO              00000100   
+MAGIC &amp; CHAO      00000100
+</code></p>
 
 <p>Kết quả giống như biến CHAO thế nên kết quả của bài trên là hiện ra CHAO.
 Để biết ta gắn những cờ nào thì FLAG sẽ thực hiện phép &amp; với cờ đó.</p>

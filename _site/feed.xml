@@ -6,8 +6,8 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 16 Feb 2016 12:40:31 +0700</pubDate>
-    <lastBuildDate>Tue, 16 Feb 2016 12:40:31 +0700</lastBuildDate>
+    <pubDate>Tue, 16 Feb 2016 12:43:23 +0700</pubDate>
+    <lastBuildDate>Tue, 16 Feb 2016 12:43:23 +0700</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
     
       <item>
@@ -38,33 +38,36 @@ Giống như cách define sau&lt;/p&gt;
 
 &lt;p&gt;Tuy nhiên mình sẽ không dùng define mà dùng enum làm cờ.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt; 
-&lt;span class=&quot;k&quot;&gt;enum&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FLAG&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-         &lt;span class=&quot;n&quot;&gt;UNKNOW&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; 
-         &lt;span class=&quot;n&quot;&gt;NORMAL&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;n&quot;&gt;MAGIC&lt;/span&gt;     &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-         &lt;span class=&quot;n&quot;&gt;CHAO&lt;/span&gt;      &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cpp
+enum FLAG
+{
+         UNKNOW    = 0, 
+         NORMAL    = 1 &amp;lt;&amp;lt; 0,
+         MAGIC     = 1 &amp;lt;&amp;lt; 1,
+         CHAO      = 1 &amp;lt;&amp;lt; 2
+};
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Hàm main&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[])&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-         &lt;span class=&quot;n&quot;&gt;FLAG&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;MAGIC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHAO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;p&gt;``` cpp
+int main(int argc, const char * argv[])
+{
+         FLAG flag = MAGIC | CHAO;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;     if( flag &amp;amp; NORMAL)
+     {
+     	cout&amp;lt;&amp;lt;&quot;Normal&quot;&amp;lt;&amp;lt;endl;
+     }   
    
-         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NORMAL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-         	&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Normal&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;   
+     if( flag &amp;amp; CHAO)
+     {
+   		cout&amp;lt;&amp;lt;&quot;Chao&quot;&amp;lt;&amp;lt;endl;      	
+     }
    
-         &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHAO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-         &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-   		&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Chao&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;      	
-         &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-   
-         &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+     return 0; } ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;table&gt;
   &lt;tbody&gt;
@@ -75,17 +78,21 @@ Giống như cách define sau&lt;/p&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;kr&quot;&gt;inline&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FLAG&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;operator&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FLAG&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;FLAG&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static_cast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;FLAG&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;static_cast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;static_cast&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cpp
+inline FLAG operator|(FLAG a, FLAG b)
+{
+    return static_cast&amp;lt;FLAG&amp;gt; (static_cast&amp;lt;int&amp;gt;(a) | static_cast&amp;lt;int&amp;gt;(b));
+}
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;OK, bây giờ code đã có thể chạy được. Giải thích một chút nhé:
 Khi ta thực hiện phép toán | (OR) giữa CHAO và MAGIC thì ta được (gán cờ để nhân vật mang 2 thuộc tính)&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;MAGIC&lt;/span&gt;             &lt;span class=&quot;mo&quot;&gt;00000010&lt;/span&gt; 
-&lt;span class=&quot;n&quot;&gt;CHAO&lt;/span&gt;              &lt;span class=&quot;mo&quot;&gt;00000100&lt;/span&gt; 
-&lt;span class=&quot;n&quot;&gt;MAGIC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHAO&lt;/span&gt;      &lt;span class=&quot;mo&quot;&gt;00000110&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cpp
+MAGIC             00000010 
+CHAO              00000100 
+MAGIC | CHAO      00000110
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;table&gt;
   &lt;tbody&gt;
@@ -96,9 +103,11 @@ Khi ta thực hiện phép toán | (OR) giữa CHAO và MAGIC thì ta được (
   &lt;/tbody&gt;
 &lt;/table&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;MAGIC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHAO&lt;/span&gt;      &lt;span class=&quot;mo&quot;&gt;00000110&lt;/span&gt; 
-&lt;span class=&quot;n&quot;&gt;CHAO&lt;/span&gt;              &lt;span class=&quot;mo&quot;&gt;00000100&lt;/span&gt;   
-&lt;span class=&quot;n&quot;&gt;MAGIC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHAO&lt;/span&gt;      &lt;span class=&quot;mo&quot;&gt;00000100&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cpp
+MAGIC | CHAO      00000110 
+CHAO              00000100   
+MAGIC &amp;amp; CHAO      00000100
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Kết quả giống như biến CHAO thế nên kết quả của bài trên là hiện ra CHAO.
 Để biết ta gắn những cờ nào thì FLAG sẽ thực hiện phép &amp;amp; với cờ đó.&lt;/p&gt;

@@ -27,7 +27,7 @@ Giống như cách define sau
 
 Tuy nhiên mình sẽ không dùng define mà dùng enum làm cờ.
 
-{% highlight cpp %} 
+``` cpp
 enum FLAG
 {
          UNKNOW    = 0, 
@@ -35,11 +35,11 @@ enum FLAG
          MAGIC     = 1 << 1,
          CHAO      = 1 << 2
 };
-{% endhighlight %} 
+```
 
 Hàm main
 
-{% highlight cpp %}
+``` cpp
 int main(int argc, const char * argv[])
 {
          FLAG flag = MAGIC | CHAO;
@@ -56,33 +56,33 @@ int main(int argc, const char * argv[])
    
          return 0;
 }
-{% endhighlight %}
+```
 
 Tuy nhiên nếu bạn chạy ngay code này thì sẽ lỗi :D. Ta cần phải overload toán tử | (OR)
 
-{% highlight cpp %}
+``` cpp
 inline FLAG operator|(FLAG a, FLAG b)
 {
     return static_cast<FLAG> (static_cast<int>(a) | static_cast<int>(b));
 }
-{% endhighlight %}
+```
 
 OK, bây giờ code đã có thể chạy được. Giải thích một chút nhé:
 Khi ta thực hiện phép toán | (OR) giữa CHAO và MAGIC thì ta được (gán cờ để nhân vật mang 2 thuộc tính)
 
-{% highlight cpp %}
+``` cpp
 MAGIC             00000010 
 CHAO              00000100 
 MAGIC | CHAO      00000110
-{% endhighlight %} 
+```
 
 Khi ta thực hiện phép toán & giữa CHAO và (MAGIC | CHAO) thì ta được (kiểm tra cờ được gán)
 
-{% highlight cpp %}
+``` cpp
 MAGIC | CHAO      00000110 
 CHAO              00000100   
 MAGIC & CHAO      00000100
-{% endhighlight %} 
+```
 
 Kết quả giống như biến CHAO thế nên kết quả của bài trên là hiện ra CHAO.
 Để biết ta gắn những cờ nào thì FLAG sẽ thực hiện phép & với cờ đó.
