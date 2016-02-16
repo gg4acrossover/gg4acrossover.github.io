@@ -9,7 +9,7 @@ Hôm nọ đọc trên DNH có bài hướng dẫn về bit field
 
 Trong bài đó cũng có phần nói về bit operators. Cái này trong IOS áp dụng tương đối nhiều, nên hôm nay mình sẽ viết 1 cái tip nho nhỏ về bitwise
 
-#Bitwise
+# Bitwise
 
 Sử dụng bitwise trong lập trình nói chung làm cho code của bạn trở nên huyền bí, khó đọc. Tuy nhiên cũng có một số trường hợp áp dụng nó sẽ khiến code trông ngắn gọn, sáng sủa. Giả sử bạn làm game, nhân vật của bạn có thể có nhiều hơn một thuộc tính như CHAO, NORLMAL, MAGIC...Bạn sẽ tạo mấy biến để lưu trữ thuộc tính nhân vật?
 
