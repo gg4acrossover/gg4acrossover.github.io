@@ -67,9 +67,11 @@
 <p>Vì những cái sắp trình bày có liên quan đến bộ nhớ, mình sẽ nói qua về stack và heap trước khi đi vào vấn đề chính.</p>
 
 <h1 id="stack">Stack</h1>
+
 <p>Stack là vùng bộ nhớ để chứa biến local, biến tạm. Khi bạn tạo ra đối tượng và được lưu trên stack thì việc quản lý bộ nhớ diễn ra một cách tự động. Thế nên bạn không phải bận tâm đến vấn đề memory leak.</p>
 
 <h1 id="heap">Heap</h1>
+
 <p>Vùng bộ nhớ mà bạn muốn sử dụng tự phải cấp phát và giải phóng khi cần thiết. Bạn trực tiếp quản lý nó, thế nên khả năng rò rỉ bộ nhớ có thể xảy ra. Như C, ta đã malloc thì phải free. Vấn đề này dễ thở hơn khi sử dụng JAVA hay Obj-C (cơ chế garbage collection).</p>
 
 <p><strong>============</strong></p>
@@ -79,11 +81,13 @@
 <p>Đối tượng trong obj-c thì hầu hết được lưu ở heap. Apple dịu dàng nghĩ ra strong, weak, copy, assign để coder quản lý bộ nhớ thuận tiện hơn (nhờ ARC). Nhưng nhiều thuộc tính như thế dễ làm coder băn khoăn cái nào nên dùng, cái nào không.</p>
 
 <h1 id="strong">Strong</h1>
+
 <p>Cơ chế quản lý bộ nhớ của ARC là nó sẽ đếm số reference đến một đối tượng cụ thể nào đó. Khi con số reference này bằng 0 thì đối tượng đó tự động giải phóng khỏi bộ nhớ. Ta không phải hủy bằng tay nữa. Strong sẽ làm cho reference tới đối tượng tăng lên 1 đơn vị, khi đó ta nói đối tượng có 1 owner. Một đối tượng có thể có nhiều owner. Nhưng tốt hơn hết là cố gắng làm sao để một đối tượng chỉ có 1 hoặc 2 owner thôi. Vì sao sẽ nói ở phần weak.</p>
 
 <p>Ta sử dụng strong đối với các UIView, UITableView,… khi tự tạo View bằng code, chứ không phải bằng storyboard hay xib.</p>
 
 <h1 id="weak">Weak</h1>
+
 <p>Cũng tương tự như strong, ngoại trừ việc nó không tăng số owner tới đối tượng . Weak không trực tiếp can thiệp vào việc hủy của đối tượng, vốn là công việc của strong. Vậy tác dụng của weak là gì? Nếu ta có nhiều owner (strong) đến đối tượng thì sẽ rắc rối cho việc giải phóng bộ nhớ, thế nên ta cần dùng đến weak.</p>
 
 <p><img src="https://s3-ap-southeast-1.amazonaws.com/kipalog.com/173cc1b2eae8a7c4.png_tn5mgte0n5" alt="Kipalog" /></p>
@@ -97,9 +101,11 @@
 <p>Liên kết giống như trên hay bắt gặp khi sử dụng delegate. Vậy nên ta hay dùng weak đối với delegate. Nếu các bạn tạo file xib và kéo thả giao diện vào trong class thì tất cả các đối tượng đều đã có owner trong file xib. Đấy là lý do Properties trong class chỉ liên kết weak với đối tượng, tránh xảy ra hiện tượng nhiều liên kết strong.</p>
 
 <h1 id="assign">Assign</h1>
+
 <p>Dùng cho các biến nguyên thủy như NSInteger, CGFloat, CGPoint, CGRect…</p>
 
 <h1 id="copy">Copy</h1>
+
 <p>Copy được sử dụng đối với những đối tượng Mutable như NSMutableArray, NSMutableDictionary…hoặc Immutable. Giả sử ta có đối tượng A, ta muốn tạo ra đối tượng B giống hệt A rồi thay đổi B mà không làm ảnh hưởng đến A thì lúc đó copy phát huy tác dụng.</p>
 
 <p>NSString có thể sử dụng thuộc tính strong nhưng nhiều lập trình viên sử dụng copy hơn. Ta có đoạn code như sau</p>
@@ -151,8 +157,8 @@
 
           
           <li>
-            <a href="https://twitter.com/viethq"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
-</span><span class="username">viethq</span></a>
+            <a href="https://twitter.com/viet142"><span class="icon icon--twitter"><svg viewBox="0 0 16 16"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">viet142</span></a>
 
           </li>
           
