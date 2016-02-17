@@ -80,9 +80,9 @@ MAGIC | CHAO      00000110
 Khi ta thực hiện phép toán & giữa CHAO và (MAGIC \| CHAO) thì ta được (kiểm tra cờ được gán)
 
 {% highlight cpp %}
-MAGIC | CHAO      00000110 
-CHAO              00000100
-MAGIC & CHAO      00000100
+MAGIC | CHAO      	00000110 
+CHAO              	00000100
+CHAO & (MAGIC | CHAO)   00000100
 {% endhighlight %}
 
 Kết quả giống như biến CHAO thế nên kết quả của bài trên là hiện ra CHAO.
