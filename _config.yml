@@ -3,7 +3,7 @@ description: Blogging about IOS and life
 meta_description: "IOS and something interesting in life"
 
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 logo: false
 paginate: 15
 baseurl: /
