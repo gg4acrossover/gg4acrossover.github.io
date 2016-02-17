@@ -5,8 +5,8 @@
     <description>Blogging about IOS and life</description>
     <link>gg4acrossover.github.io//</link>
     <atom:link href="gg4acrossover.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 17 Feb 2016 21:44:38 +0700</pubDate>
-    <lastBuildDate>Wed, 17 Feb 2016 21:44:38 +0700</lastBuildDate>
+    <pubDate>Wed, 17 Feb 2016 21:59:37 +0700</pubDate>
+    <lastBuildDate>Wed, 17 Feb 2016 21:59:37 +0700</lastBuildDate>
     <generator>Jekyll v3.1.1</generator>
     
       <item>
@@ -26,12 +26,12 @@
 &lt;p&gt;Đây là một trường hợp tuyệt vời để áp dụng enum flag, khi đó ta chỉ cần một biến duy nhất để lưu trữ thuộc tính, tránh code rườm rà.
 Giống như cách define sau&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#define KEY_UP       (1 &amp;lt;&amp;lt; 0)  &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// 000001&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#define KEY_RIGHT    (1 &amp;lt;&amp;lt; 1)  &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// 000010&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#define KEY_DOWN     (1 &amp;lt;&amp;lt; 2)  &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// 000100&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#define KEY_LEFT     (1 &amp;lt;&amp;lt; 3)  &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// 001000&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#define KEY_BUTTON1  (1 &amp;lt;&amp;lt; 4)  &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// 010000&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;#define KEY_BUTTON2  (1 &amp;lt;&amp;lt; 5)  &lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;// 100000&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#define KEY_UP       (1 &amp;lt;&amp;lt; 0)  // 000001
+#define KEY_RIGHT    (1 &amp;lt;&amp;lt; 1)  // 000010
+#define KEY_DOWN     (1 &amp;lt;&amp;lt; 2)  // 000100
+#define KEY_LEFT     (1 &amp;lt;&amp;lt; 3)  // 001000
+#define KEY_BUTTON1  (1 &amp;lt;&amp;lt; 4)  // 010000
+#define KEY_BUTTON2  (1 &amp;lt;&amp;lt; 5)  // 100000&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Tuy nhiên mình sẽ không dùng define mà dùng enum làm cờ.&lt;/p&gt;
 
@@ -51,12 +51,12 @@ Giống như cách define sau&lt;/p&gt;
    
          &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NORMAL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
          &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-         	&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Normal&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+         	&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Normal&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;   
    
          &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flag&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHAO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
          &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-   		&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Chao&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+   		&lt;span class=&quot;n&quot;&gt;cout&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Chao&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;endl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
    
          &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -79,9 +79,9 @@ Khi ta thực hiện phép toán | (OR) giữa CHAO và MAGIC thì ta được (
 
 &lt;p&gt;Khi ta thực hiện phép toán &amp;amp; giữa CHAO và (MAGIC | CHAO) thì ta được (kiểm tra cờ được gán)&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;MAGIC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHAO&lt;/span&gt;      &lt;span class=&quot;mo&quot;&gt;00000110&lt;/span&gt; 
-&lt;span class=&quot;n&quot;&gt;CHAO&lt;/span&gt;              &lt;span class=&quot;mo&quot;&gt;00000100&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;MAGIC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHAO&lt;/span&gt;      &lt;span class=&quot;mo&quot;&gt;00000100&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-cpp&quot; data-lang=&quot;cpp&quot;&gt;&lt;span class=&quot;n&quot;&gt;MAGIC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHAO&lt;/span&gt;      	&lt;span class=&quot;mo&quot;&gt;00000110&lt;/span&gt; 
+&lt;span class=&quot;n&quot;&gt;CHAO&lt;/span&gt;              	&lt;span class=&quot;mo&quot;&gt;00000100&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;CHAO&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAGIC&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;CHAO&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;   &lt;span class=&quot;mo&quot;&gt;00000100&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Kết quả giống như biến CHAO thế nên kết quả của bài trên là hiện ra CHAO.
 Để biết ta gắn những cờ nào thì FLAG sẽ thực hiện phép &amp;amp; với cờ đó.&lt;/p&gt;
@@ -139,11 +139,11 @@ Khi ta thực hiện phép toán | (OR) giữa CHAO và MAGIC thì ta được (
 
 &lt;p&gt;NSString có thể sử dụng thuộc tính strong nhưng nhiều lập trình viên sử dụng copy hơn. Ta có đoạn code như sau&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;no&quot;&gt;NSMutableString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pStrMutable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;NSMutableString&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;initWithCapacity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pStrMutable&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;setString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;HelloWorld&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;no&quot;&gt;NSMutableString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pStrMutable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[[&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;NSMutableString&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;alloc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;initWithCapacity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pStrMutable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;setString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;HelloWorld&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;span class=&quot;no&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pStrImmutable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pStrMutable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;helloWorld&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pStrMutable&lt;/span&gt; &lt;span class=&quot;ss&quot;&gt;setString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;another text&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;no&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;%@&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pStrImmutable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;another&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pStrMutable&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;setString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;another text&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;no&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;%@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pStrImmutable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;sr&quot;&gt;//&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;another&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;NSMutableString* có thể làm NSString* trỏ đến một text khác, làm sai lệch text mà ta mong muốn. Ta nên sử dụng copy với những đối tượng có cả Immutable và mutable như String, Dictionary.&lt;/p&gt;
 

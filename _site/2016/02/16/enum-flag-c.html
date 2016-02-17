@@ -69,12 +69,12 @@
 <p>Đây là một trường hợp tuyệt vời để áp dụng enum flag, khi đó ta chỉ cần một biến duy nhất để lưu trữ thuộc tính, tránh code rườm rà.
 Giống như cách define sau</p>
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#define KEY_UP       (1 &lt;&lt; 0)  </span><span class="c1">// 000001</span>
-<span class="cp">#define KEY_RIGHT    (1 &lt;&lt; 1)  </span><span class="c1">// 000010</span>
-<span class="cp">#define KEY_DOWN     (1 &lt;&lt; 2)  </span><span class="c1">// 000100</span>
-<span class="cp">#define KEY_LEFT     (1 &lt;&lt; 3)  </span><span class="c1">// 001000</span>
-<span class="cp">#define KEY_BUTTON1  (1 &lt;&lt; 4)  </span><span class="c1">// 010000</span>
-<span class="cp">#define KEY_BUTTON2  (1 &lt;&lt; 5)  </span><span class="c1">// 100000</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#define KEY_UP       (1 &lt;&lt; 0)  // 000001
+#define KEY_RIGHT    (1 &lt;&lt; 1)  // 000010
+#define KEY_DOWN     (1 &lt;&lt; 2)  // 000100
+#define KEY_LEFT     (1 &lt;&lt; 3)  // 001000
+#define KEY_BUTTON1  (1 &lt;&lt; 4)  // 010000
+#define KEY_BUTTON2  (1 &lt;&lt; 5)  // 100000</span></code></pre></figure>
 
 <p>Tuy nhiên mình sẽ không dùng define mà dùng enum làm cờ.</p>
 
@@ -94,12 +94,12 @@ Giống như cách define sau</p>
    
          <span class="k">if</span><span class="p">(</span> <span class="n">flag</span> <span class="o">&amp;</span> <span class="n">NORMAL</span><span class="p">)</span>
          <span class="p">{</span>
-         	<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;Normal&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+         	<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"Normal"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
          <span class="p">}</span>   
    
          <span class="k">if</span><span class="p">(</span> <span class="n">flag</span> <span class="o">&amp;</span> <span class="n">CHAO</span><span class="p">)</span>
          <span class="p">{</span>
-   		<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">&quot;Chao&quot;</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+   		<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"Chao"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
          <span class="p">}</span>
    
          <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
@@ -122,9 +122,9 @@ Khi ta thực hiện phép toán | (OR) giữa CHAO và MAGIC thì ta được (
 
 <p>Khi ta thực hiện phép toán &amp; giữa CHAO và (MAGIC | CHAO) thì ta được (kiểm tra cờ được gán)</p>
 
-<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">MAGIC</span> <span class="o">|</span> <span class="n">CHAO</span>      <span class="mo">00000110</span> 
-<span class="n">CHAO</span>              <span class="mo">00000100</span>
-<span class="n">MAGIC</span> <span class="o">&amp;</span> <span class="n">CHAO</span>      <span class="mo">00000100</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">MAGIC</span> <span class="o">|</span> <span class="n">CHAO</span>      	<span class="mo">00000110</span> 
+<span class="n">CHAO</span>              	<span class="mo">00000100</span>
+<span class="n">CHAO</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">MAGIC</span> <span class="o">|</span> <span class="n">CHAO</span><span class="p">)</span>   <span class="mo">00000100</span></code></pre></figure>
 
 <p>Kết quả giống như biến CHAO thế nên kết quả của bài trên là hiện ra CHAO.
 Để biết ta gắn những cờ nào thì FLAG sẽ thực hiện phép &amp; với cờ đó.</p>

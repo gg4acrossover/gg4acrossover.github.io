@@ -100,11 +100,11 @@
 
 <p>NSString có thể sử dụng thuộc tính strong nhưng nhiều lập trình viên sử dụng copy hơn. Ta có đoạn code như sau</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">NSMutableString</span> <span class="o">*</span><span class="n">pStrMutable</span> <span class="o">=</span> <span class="o">[[</span><span class="no">NSMutableString</span> <span class="n">alloc</span><span class="o">]</span> <span class="ss">initWithCapacity</span><span class="p">:</span><span class="mi">100</span><span class="o">]</span><span class="p">;</span>
-<span class="o">[</span><span class="n">pStrMutable</span> <span class="ss">setString</span><span class="p">:</span><span class="err">@</span><span class="s2">&quot;HelloWorld&quot;</span><span class="o">]</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">NSMutableString</span> <span class="o">*</span><span class="n">pStrMutable</span> <span class="o">=</span> <span class="p">[[</span><span class="no">NSMutableString</span> <span class="n">alloc</span><span class="p">]</span> <span class="n">initWithCapacity</span><span class="p">:</span><span class="mi">100</span><span class="p">];</span>
+<span class="p">[</span><span class="n">pStrMutable</span> <span class="n">setString</span><span class="p">:</span><span class="err">@</span><span class="s2">"HelloWorld"</span><span class="p">];</span>
 <span class="no">NSString</span> <span class="o">*</span><span class="n">pStrImmutable</span> <span class="o">=</span> <span class="n">pStrMutable</span><span class="p">;</span> <span class="sr">//</span> <span class="n">helloWorld</span>
-<span class="o">[</span><span class="n">pStrMutable</span> <span class="ss">setString</span><span class="p">:</span><span class="err">@</span><span class="s2">&quot;another text&quot;</span><span class="o">]</span><span class="p">;</span>
-<span class="no">NSLog</span><span class="p">(</span><span class="err">@</span><span class="s2">&quot;%@&quot;</span><span class="p">,</span> <span class="n">pStrImmutable</span><span class="p">);</span> <span class="sr">//</span> <span class="n">another</span> <span class="n">text</span></code></pre></figure>
+<span class="p">[</span><span class="n">pStrMutable</span> <span class="n">setString</span><span class="p">:</span><span class="err">@</span><span class="s2">"another text"</span><span class="p">];</span>
+<span class="no">NSLog</span><span class="p">(</span><span class="err">@</span><span class="s2">"%@"</span><span class="p">,</span> <span class="n">pStrImmutable</span><span class="p">);</span> <span class="sr">//</span> <span class="n">another</span> <span class="n">text</span></code></pre></figure>
 
 <p>NSMutableString* có thể làm NSString* trỏ đến một text khác, làm sai lệch text mà ta mong muốn. Ta nên sử dụng copy với những đối tượng có cả Immutable và mutable như String, Dictionary.</p>
 
