@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>GG4aCrossover - Blogging about IOS and life</title>
+    <meta name="description" content="IOS and something interesting in life" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <!-- Customisation  -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+
+</head>
+<body class="home-template">
+
+    <header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="back-button icon-arrow-left" href="/">Home</a>
+        <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Các thuộc tính của property trong objective-c!</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2016-02-15">15 Feb 2016</time>
+                
+                    on basic
+                
+            </section>
+        </header>
+
+<!--         <header class="post-header">
+            <a id="blog-logo" href="gg4acrossover.github.io">
+                
+                    <span class="blog-title">GG4aCrossover</span>
+                
+            </a>
+        </header> -->
+
+        <!-- <span class="post-meta">
+            <time datetime="2016-02-15">15 Feb 2016</time>
+            
+                on basic
+            
+        </span> -->
+
+        <!-- <h1 class="post-title">Các thuộc tính của property trong objective-c!</h1> -->
+
+        <section class="post-content">
+            <p>Thời gian đầu làm việc với obj-c mình khá băn khoăn trong việc sử dụng các thuộc tính trong property như strong, weak, copy, assign. Nhân lúc rảnh rỗi sinh nông nổi, mình giới thiệu qua về vấn đề này để những ai mới làm quen với obj-c sẽ tiếp cận nhanh hơn.</p>
+
+<p>Vì những cái sắp trình bày có liên quan đến bộ nhớ, mình sẽ nói qua về stack và heap trước khi đi vào vấn đề chính.</p>
+
+<h1 id="stack">Stack</h1>
+<p>Stack là vùng bộ nhớ để chứa biến local, biến tạm. Khi bạn tạo ra đối tượng và được lưu trên stack thì việc quản lý bộ nhớ diễn ra một cách tự động. Thế nên bạn không phải bận tâm đến vấn đề memory leak.</p>
+
+<h1 id="heap">Heap</h1>
+<p>Vùng bộ nhớ mà bạn muốn sử dụng tự phải cấp phát và giải phóng khi cần thiết. Bạn trực tiếp quản lý nó, thế nên khả năng rò rỉ bộ nhớ có thể xảy ra. Như C, ta đã malloc thì phải free. Vấn đề này dễ thở hơn khi sử dụng JAVA hay Obj-C (cơ chế garbage collection).</p>
+
+<p><strong>============</strong></p>
+
+<p>Lợi thế trong việc sử dụng stack là tốc độ nhanh, sự đơn giản (tự động hủy khi hàm return hoặc khi ra khỏi scope). Tuy nhiên, khi lập trình chúng ta có xu hướng muốn quản lý lifetime của đối tượng, thế nên ta sử dụng heap khá thường xuyên.</p>
+
+<p>Đối tượng trong obj-c thì hầu hết được lưu ở heap. Apple dịu dàng nghĩ ra strong, weak, copy, assign để coder quản lý bộ nhớ thuận tiện hơn (nhờ ARC). Nhưng nhiều thuộc tính như thế dễ làm coder băn khoăn cái nào nên dùng, cái nào không.</p>
+
+<h1 id="strong">Strong</h1>
+<p>Cơ chế quản lý bộ nhớ của ARC là nó sẽ đếm số reference đến một đối tượng cụ thể nào đó. Khi con số reference này bằng 0 thì đối tượng đó tự động giải phóng khỏi bộ nhớ. Ta không phải hủy bằng tay nữa. Strong sẽ làm cho reference tới đối tượng tăng lên 1 đơn vị, khi đó ta nói đối tượng có 1 owner. Một đối tượng có thể có nhiều owner. Nhưng tốt hơn hết là cố gắng làm sao để một đối tượng chỉ có 1 hoặc 2 owner thôi. Vì sao sẽ nói ở phần weak.</p>
+
+<p>Ta sử dụng strong đối với các UIView, UITableView,… khi tự tạo View bằng code, chứ không phải bằng storyboard hay xib.</p>
+
+<h1 id="weak">Weak</h1>
+<p>Cũng tương tự như strong, ngoại trừ việc nó không tăng số owner tới đối tượng . Weak không trực tiếp can thiệp vào việc hủy của đối tượng, vốn là công việc của strong. Vậy tác dụng của weak là gì? Nếu ta có nhiều owner (strong) đến đối tượng thì sẽ rắc rối cho việc giải phóng bộ nhớ, thế nên ta cần dùng đến weak.</p>
+
+<p><img src="https://s3-ap-southeast-1.amazonaws.com/kipalog.com/173cc1b2eae8a7c4.png_tn5mgte0n5" alt="Kipalog" /></p>
+
+<p>Như ta thấy ở hình trên, Person và Apartment có reference qua nhau. Khi john và number73 không còn owner đến 2 thực thể này nữa thì 2 thực thể này vẫn không bị hủy. Lý do là vì owner tới 2 đối tượng này chưa về 0. (vẫn đang strong qua lại)</p>
+
+<p>Phương án giải quyết như sau</p>
+
+<p><img src="https://s3-ap-southeast-1.amazonaws.com/kipalog.com/0f3a1ba4a040045d.png_w7vzy9u63n" alt="Kipalog" /></p>
+
+<p>Liên kết giống như trên hay bắt gặp khi sử dụng delegate. Vậy nên ta hay dùng weak đối với delegate. Nếu các bạn tạo file xib và kéo thả giao diện vào trong class thì tất cả các đối tượng đều đã có owner trong file xib. Đấy là lý do Properties trong class chỉ liên kết weak với đối tượng, tránh xảy ra hiện tượng nhiều liên kết strong.</p>
+
+<h1 id="assign">Assign</h1>
+<p>Dùng cho các biến nguyên thủy như NSInteger, CGFloat, CGPoint, CGRect…</p>
+
+<h1 id="copy">Copy</h1>
+<p>Copy được sử dụng đối với những đối tượng Mutable như NSMutableArray, NSMutableDictionary…hoặc Immutable. Giả sử ta có đối tượng A, ta muốn tạo ra đối tượng B giống hệt A rồi thay đổi B mà không làm ảnh hưởng đến A thì lúc đó copy phát huy tác dụng.</p>
+
+<p>NSString có thể sử dụng thuộc tính strong nhưng nhiều lập trình viên sử dụng copy hơn. Ta có đoạn code như sau</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="no">NSMutableString</span> <span class="o">*</span><span class="n">pStrMutable</span> <span class="o">=</span> <span class="o">[[</span><span class="no">NSMutableString</span> <span class="n">alloc</span><span class="o">]</span> <span class="ss">initWithCapacity</span><span class="p">:</span><span class="mi">100</span><span class="o">]</span><span class="p">;</span>
+<span class="o">[</span><span class="n">pStrMutable</span> <span class="ss">setString</span><span class="p">:</span><span class="err">@</span><span class="s2">&quot;HelloWorld&quot;</span><span class="o">]</span><span class="p">;</span>
+<span class="no">NSString</span> <span class="o">*</span><span class="n">pStrImmutable</span> <span class="o">=</span> <span class="n">pStrMutable</span><span class="p">;</span> <span class="sr">//</span> <span class="n">helloWorld</span>
+<span class="o">[</span><span class="n">pStrMutable</span> <span class="ss">setString</span><span class="p">:</span><span class="err">@</span><span class="s2">&quot;another text&quot;</span><span class="o">]</span><span class="p">;</span>
+<span class="no">NSLog</span><span class="p">(</span><span class="err">@</span><span class="s2">&quot;%@&quot;</span><span class="p">,</span> <span class="n">pStrImmutable</span><span class="p">);</span> <span class="sr">//</span> <span class="n">another</span> <span class="n">text</span></code></pre></figure>
+
+<p>NSMutableString* có thể làm NSString* trỏ đến một text khác, làm sai lệch text mà ta mong muốn. Ta nên sử dụng copy với những đối tượng có cả Immutable và mutable như String, Dictionary.</p>
+
+<p>Ngoài ra copy còn sử dụng với block ^{}. Block cũng là một đối tượng trong obj-c nhưng có một điều đặc biệt, đối tượng này lưu ở stack. Như giải thích ở phần stack thì ta sẽ không quản lý được lifetime của đối tượng lưu trong stack mà việc này diễn ra tự động mỗi khi hàm return hay ra khỏi scope. Thuộc tính copy để tạo ra 1 bản…copy của block, lưu ở heap. Lúc này ARC sẽ quản lý việc giải phóng bộ nhớ giúp ta.</p>
+
+<p>Một số link hay để tham khảo:
+<a href="http://www.objc.io/issue-7/value-objects.html">objc.io</a></p>
+
+
+        </section>
+
+        
+
+        <footer class="post-footer">
+            <!-- If we want to display author's name and bio -->
+            
+                <figure class="author-image">
+                    <a class="img" href="/" style="background-image: url(/assets/images/profile.png)">
+                    <span class="hidden">VietHQ's Picture</span></a>
+                </figure>
+                <section class="author">
+                    <!-- Author Name -->
+                    <h4> VietHQ </h4>
+                    <!-- Author Bio -->
+                    <p>
+                        Developer nhân dân
+                    </p>
+                </section>
+            
+
+            <!-- Share links section -->
+            <section class="share">
+    <h4>Share this post</h4>
+    <a class="icon-twitter" href="http://twitter.com/share?text=Các thuộc tính của property trong objective-c!&amp;url=https://gg4acrossover.github.io/basic/2016/02/15/cac-thuoc-tinh-cua-property.html"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <span class="hidden">Twitter</span>
+    </a>
+    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=https://gg4acrossover.github.io/basic/2016/02/15/cac-thuoc-tinh-cua-property.html"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <span class="hidden">Facebook</span>
+    </a>
+    <a class="icon-google-plus" href="https://plus.google.com/share?url=https://gg4acrossover.github.io/basic/2016/02/15/cac-thuoc-tinh-cua-property.html"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <span class="hidden">Google+</span>
+    </a>
+</section>
+
+            <!-- Disqus comments -->
+            
+
+        </footer>
+
+    </article>
+
+</main>
+
+    <footer class="site-footer clearfix">
+      <section class="copyright">
+        <a href="/">GG4aCrossover</a> &copy; 
+               &bull; All rights reserved.
+      </section>
+      <section class="poweredby">Made with Jekyll using 
+        <a href="http://github.com/rosario/kasper">Kasper theme</a>
+      </section>
+    </footer>
+    
+    <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Google Analytics Tracking code -->
+    <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', '']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+    </script>   
+</body>
+</html>

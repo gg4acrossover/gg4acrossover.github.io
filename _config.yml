@@ -1,19 +1,16 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+name: GG4aCrossover
+description: Blogging about IOS and life
+meta_description: "IOS and something interesting in life"
 
-# Site settings
-title: GG4aCrossover
-email: viethoangquoc1402@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  Tất tần tật về IOS, kể cả những điều thú vị khác nữa.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
-twitter_username: viet142
-github_username:  gg4acrossover
-
-# Build settings
 markdown: kramdown
+highlighter: pygments
+logo: false
+paginate: 15
+baseurl: /
+domain_name: 'https://gg4acrossover.github.io'
+google_analytics: ''
+gems: [jekyll-paginate]
+
+# Details for the RSS feed generator
+url:            'gg4acrossover.github.io'
+author:         'VietHQ'

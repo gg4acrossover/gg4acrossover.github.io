@@ -1,9 +1,9 @@
 ---
 layout: page
-title: About
-permalink: /about/
+title: About me 
 ---
 
-#Hoàng Quốc Việt
+**Hoàng Quốc Việt**
 
-I love writing blog about ios technology and playing warcraft 3
+Developer nhân nhân.
+Thi thoảng viết lách về IOS và nhiều điều thú vị khác nữa.
