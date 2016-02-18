@@ -5,6 +5,8 @@ date: 2016-02-18T16:31:54+05:30
 categories: swift
 ---
 
+Có nhiều cách để tạo func hơn là làm bánh hay làm tình ( chế từ câu nói của Nguyễn Miền Biên Thùy).
+
 # Tạo function 1 param
 
 {% highlight ruby %}
