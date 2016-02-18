@@ -1,0 +1,18 @@
+callback([
+
+  {
+    "text": "Các thuộc tính của property trong objective-c!",
+    "href": "/basic/2016/02/15/cac-thuoc-tinh-cua-property/"
+  } ,
+
+  {
+    "text": "Enum Flag C++",
+    "href": "/2016/02/16/enum-flag-c/"
+  } ,
+
+  {
+    "text": "ưu tiên toán tử",
+    "href": "/c++/2016/02/18/uu-tien-toan-tu/"
+  } 
+
+])

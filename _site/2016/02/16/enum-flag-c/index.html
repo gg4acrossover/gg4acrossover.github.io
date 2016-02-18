@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ENUM FLAG C++ &vert; GG4ACROSSOVER</title>
+<meta name="description" content="IOS and Life">
+<meta name="keywords" content="">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/logo.png">
+<meta name="twitter:title" content="Enum Flag C++">
+<meta name="twitter:description" content="IOS and Life">
+<meta name="twitter:creator" content="@viet142">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Enum Flag C++">
+<meta property="og:description" content="IOS and Life">
+<meta property="og:url" content="/2016/02/16/enum-flag-c/">
+<meta property="og:site_name" content="GG4aCrossover">
+<meta property="og:image" content="/images/">
+
+
+
+
+
+<link rel="canonical" href="/2016/02/16/enum-flag-c/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="GG4aCrossover Feed">
+<link rel="author" href="?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/assets/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/vendor/normalize.css">
+    <link rel="stylesheet" href="/assets/css/vendor/nprogress.css">
+    <link rel="stylesheet" href="/assets/css/vendor/foundation.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/post.css">
+
+
+
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+<style type="text/css">@media only screen and (min-width:43.75em){.notepad-post-content div>p:first-child:first-letter{float:left;font-size:4.688rem;line-height:4.375rem;padding-top:.25rem;padding-right:.5rem;padding-left:.188rem;font-family:serif}}</style>
+</head>
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
+
+        <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+            <header class="notepad-post-header-simple">
+                <div class="notepad-post-menu-header-simple">
+
+                    <a class="notepad-blog-logo" href="">
+                        <img src="/images/logo.png" alt="Blog Logo" />
+                    </a>
+
+                <div class="notepad-blog-menu">      
+    <div class="notepad-mobile-menu show-for-small">
+        <a href="#"><i class="fa fa-bars"></i></a>
+    </div>
+    <ul class="notepad-menu">
+        <li class="notepad-mobile-close-btn show-for-small text-right">
+            <a href="#"><i class="fa fa-times"></i></a>
+        </li>
+
+            <li>
+                    <a href="/">Home</a>
+                 </li>
+
+            <li>
+                    <a href="/categories">Categories</a>
+                 </li>
+
+            <li>
+                    <a href="/about">About</a>
+                 </li>
+            
+           <li><a href="/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+    </ul>
+
+</div>
+            </div>
+
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h1>Enum Flag C++</h1>
+                            <p>by <strong>GG4aCrossover</strong> &#8212;  <strong><time datetime="2016-02-16T07:20:02+05:30">16 Feb 2016</time></strong></p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+        <article class="notepad-post-content post tag-simple">
+            <div><p>Hôm nọ đọc trên DNH có bài hướng dẫn về bit field</p>
+
+<blockquote>
+  <p><a href="http://www.wikiwand.com/en/Bit_field">Daynhauhoc</a></p>
+</blockquote>
+
+<p>Trong bài đó cũng có phần nói về bit operators. Cái này trong IOS áp dụng tương đối nhiều, nên hôm nay mình sẽ viết 1 cái tip nho nhỏ về bitwise</p>
+
+<h1 id="bitwise">Bitwise</h1>
+
+<p>Sử dụng bitwise trong lập trình nói chung làm cho code của bạn trở nên huyền bí, khó đọc. Tuy nhiên cũng có một số trường hợp áp dụng nó sẽ khiến code trông ngắn gọn, sáng sủa. Giả sử bạn làm game, nhân vật của bạn có thể có nhiều hơn một thuộc tính như CHAO, NORLMAL, MAGIC…Bạn sẽ tạo mấy biến để lưu trữ thuộc tính nhân vật?</p>
+
+<p>Đây là một trường hợp tuyệt vời để áp dụng enum flag, khi đó ta chỉ cần một biến duy nhất để lưu trữ thuộc tính, tránh code rườm rà.
+Giống như cách define sau</p>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#define KEY_UP       (1 &lt;&lt; 0)  // 000001
+#define KEY_RIGHT    (1 &lt;&lt; 1)  // 000010
+#define KEY_DOWN     (1 &lt;&lt; 2)  // 000100
+#define KEY_LEFT     (1 &lt;&lt; 3)  // 001000
+#define KEY_BUTTON1  (1 &lt;&lt; 4)  // 010000
+#define KEY_BUTTON2  (1 &lt;&lt; 5)  // 100000</span></code></pre></figure>
+
+<p>Tuy nhiên mình sẽ không dùng define mà dùng enum làm cờ.</p>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="k">enum</span> <span class="n">FLAG</span>
+<span class="p">{</span>
+         <span class="n">UNKNOW</span>    <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> 
+         <span class="n">NORMAL</span>    <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="n">MAGIC</span>     <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="n">CHAO</span>      <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>Hàm main</p>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span> <span class="n">argv</span><span class="p">[])</span>
+<span class="p">{</span>
+         <span class="n">FLAG</span> <span class="n">flag</span> <span class="o">=</span> <span class="n">MAGIC</span> <span class="o">|</span> <span class="n">CHAO</span><span class="p">;</span>
+   
+         <span class="k">if</span><span class="p">(</span> <span class="n">flag</span> <span class="o">&amp;</span> <span class="n">NORMAL</span><span class="p">)</span>
+         <span class="p">{</span>
+         	<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"Normal"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+         <span class="p">}</span>   
+   
+         <span class="k">if</span><span class="p">(</span> <span class="n">flag</span> <span class="o">&amp;</span> <span class="n">CHAO</span><span class="p">)</span>
+         <span class="p">{</span>
+   		<span class="n">cout</span><span class="o">&lt;&lt;</span><span class="s">"Chao"</span><span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+         <span class="p">}</span>
+   
+         <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>Tuy nhiên nếu bạn chạy ngay code này thì sẽ lỗi. Ta cần phải overload toán tử | (OR)</p>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kr">inline</span> <span class="n">FLAG</span> <span class="k">operator</span><span class="o">|</span><span class="p">(</span><span class="n">FLAG</span> <span class="n">a</span><span class="p">,</span> <span class="n">FLAG</span> <span class="n">b</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">FLAG</span><span class="o">&gt;</span> <span class="p">(</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">|</span> 
+                               <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">b</span><span class="p">));</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>OK, bây giờ code đã có thể chạy được. Giải thích một chút nhé:
+Khi ta thực hiện phép toán | (OR) giữa CHAO và MAGIC thì ta được (gán cờ để nhân vật mang 2 thuộc tính)</p>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">MAGIC</span>             <span class="mo">00000010</span> 
+<span class="n">CHAO</span>              <span class="mo">00000100</span> 
+<span class="n">MAGIC</span> <span class="o">|</span> <span class="n">CHAO</span>      <span class="mo">00000110</span></code></pre></figure>
+
+<p>Khi ta thực hiện phép toán &amp; giữa CHAO và (MAGIC | CHAO) thì ta được (kiểm tra cờ được gán)</p>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="n">MAGIC</span> <span class="o">|</span> <span class="n">CHAO</span>      	<span class="mo">00000110</span> 
+<span class="n">CHAO</span>              	<span class="mo">00000100</span>
+<span class="n">CHAO</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">MAGIC</span> <span class="o">|</span> <span class="n">CHAO</span><span class="p">)</span>   <span class="mo">00000100</span></code></pre></figure>
+
+<p>Kết quả giống như biến CHAO thế nên kết quả của bài trên là hiện ra CHAO.
+Để biết ta gắn những cờ nào thì FLAG sẽ thực hiện phép &amp; với cờ đó.</p>
+
+<p>P/S: Lập trình ios thì các bạn sẽ thấy cái này khá nhiều.</p>
+
+            </div>
+        </article>
+        <div class="cf"></div>
+        <div class="row text-center">
+            <section class="notepad-post-share">
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;Enum Flag C++&quot;%20/2016/02/16/enum-flag-c/%20via%20&#64;viet142"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=/2016/02/16/enum-flag-c/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a class="google-icon" href="https://plus.google.com/share?url=/2016/02/16/enum-flag-c/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </section>
+        </div>
+        <div class="cf"></div>
+        
+            <div class="notepad-author-info">
+                <div class="row">
+                    <section class="notepad-post-author small-12 columns">
+                        
+                            <img src="/images/profile.png" class="notepad-post-author-avatar" alt="GG4aCrossover's photo">
+                        
+                        
+                            <span class="author-label">Author</span>
+                            <h1>GG4aCrossover</h1>
+                        
+                        
+                            <p><a href="mailto:hoangquocviet1402@gmail.com" class="author-website">hoangquocviet1402@gmail.com</a>
+
+			    <iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fameyjadiye&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=450&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe> 
+			    </p>
+                        
+                        
+                            <p>Coder nhân dân, thi thoảng viết về IOS và những điều thú vị khác nữa.</p>
+                        
+                    </section>
+                </div>
+            </div>
+ 
+        
+        <div class="cf"></div>
+        
+        <div class="cf"></div>
+
+    <footer class="notepad-site-footer">
+    <div class="copyright">
+        <section>All content copyright <a href="/about">GG4aCrossover</a> &copy; 2016 &bull; All rights reserved.</section>
+	<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>
+          <a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>
+    </div>
+    <div class="social-icons">
+        
+        
+        <a href="http://twitter.com/viet142">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-google-plus fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        
+        
+    </div>
+    
+    <div class="cf"></div>
+</footer>
+ 
+</main>    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+    <script src="/assets/js/vendor/modernizr.js"></script>
+    <script src="/assets/js/foundation.min.js"></script>
+    
+    <script src="/assets/js/notepad.js"></script>
+    <script src="/assets/js/scripts.min.js"></script>
+    <script src="/assets/js/vendor/nprogress.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/sigma.js/1.0.3/sigma.min.js"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+
+</script>
+
+<script>NProgress.start();var interval=setInterval(function(){NProgress.inc()},1000);jQuery(window).load(function(){clearInterval(interval);NProgress.done()});jQuery(window).unload(function(){NProgress.start()});</script>
+ 
+</body>
+</html>
