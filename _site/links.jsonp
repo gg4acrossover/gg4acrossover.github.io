@@ -13,6 +13,11 @@ callback([
   {
     "text": "ưu tiên toán tử",
     "href": "/c++/2016/02/18/uu-tien-toan-tu/"
+  } ,
+
+  {
+    "text": "C++11 những cái hay dùng",
+    "href": "/c++/2016/02/18/c-nhung-cai-hay-dung/"
   } 
 
 ])

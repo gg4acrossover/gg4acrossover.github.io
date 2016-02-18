@@ -1,6 +1,14 @@
 [
 	
 		{
+		  "title"      : "C++11 những cái hay dùng",
+		  "category"   : "",
+		  "url"        : "/c++/2016/02/18/c-nhung-cai-hay-dung/",
+		  "date"       : "2016-02-18 16:06:32 +0530",
+		  "shortdate"  : "February 18, 2016"
+		} ,
+	
+		{
 		  "title"      : "ưu tiên toán tử",
 		  "category"   : "",
 		  "url"        : "/c++/2016/02/18/uu-tien-toan-tu/",
