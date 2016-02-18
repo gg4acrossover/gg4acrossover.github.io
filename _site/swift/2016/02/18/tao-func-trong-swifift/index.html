@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TạO FUNC TRONG SWIFT &vert; GG4ACROSSOVER</title>
+<meta name="description" content="IOS and Life">
+<meta name="keywords" content="">
+
+<!-- Twitter Cards -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="/images/logo.png">
+<meta name="twitter:title" content="tạo func trong swift">
+<meta name="twitter:description" content="IOS and Life">
+<meta name="twitter:creator" content="@viet142">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tạo func trong swift">
+<meta property="og:description" content="IOS and Life">
+<meta property="og:url" content="/swift/2016/02/18/tao-func-trong-swifift/">
+<meta property="og:site_name" content="GG4aCrossover">
+<meta property="og:image" content="/images/">
+
+
+
+
+
+<link rel="canonical" href="/swift/2016/02/18/tao-func-trong-swifift/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="GG4aCrossover Feed">
+<link rel="author" href="?rel=author">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:400,600,300,800,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/assets/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/vendor/normalize.css">
+    <link rel="stylesheet" href="/assets/css/vendor/nprogress.css">
+    <link rel="stylesheet" href="/assets/css/vendor/foundation.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/post.css">
+
+
+
+
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+<style type="text/css">@media only screen and (min-width:43.75em){.notepad-post-content div>p:first-child:first-letter{float:left;font-size:4.688rem;line-height:4.375rem;padding-top:.25rem;padding-right:.5rem;padding-left:.188rem;font-family:serif}}</style>
+</head>
+<body class="post-template" itemscope itemtype="http://schema.org/WebPage">  
+
+        <main id="notepad-post-container-simple" class="notepad-post-container-simple" role="main">
+            <header class="notepad-post-header-simple">
+                <div class="notepad-post-menu-header-simple">
+
+                    <a class="notepad-blog-logo" href="">
+                        <img src="/images/logo.png" alt="Blog Logo" />
+                    </a>
+
+                <div class="notepad-blog-menu">      
+    <div class="notepad-mobile-menu show-for-small">
+        <a href="#"><i class="fa fa-bars"></i></a>
+    </div>
+    <ul class="notepad-menu">
+        <li class="notepad-mobile-close-btn show-for-small text-right">
+            <a href="#"><i class="fa fa-times"></i></a>
+        </li>
+
+            <li>
+                    <a href="/">Home</a>
+                 </li>
+
+            <li>
+                    <a href="/categories">Categories</a>
+                 </li>
+
+            <li>
+                    <a href="/about">About</a>
+                 </li>
+            
+           <li><a href="/feed.xml" title="Atom/RSS feed"><i class="icon-rss"></i> Feed</a></li>
+    </ul>
+
+</div>
+            </div>
+
+                <div class="notepad-post-title-simple row">
+                    <div class="small-12 columns">
+                        <div class="notepad-post-meta-simple">
+                            <h1>tạo func trong swift</h1>
+                            <p>by <strong>GG4aCrossover</strong> &#8212;  <strong><time datetime="2016-02-18T16:31:54+05:30">18 Feb 2016</time></strong></p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+        <article class="notepad-post-content post tag-simple">
+            <div><h1 id="to-function-1-param">Tạo function 1 param</h1>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">func</span> <span class="n">sayHello</span><span class="p">(</span><span class="ss">name: </span><span class="no">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="no">String</span> 
+<span class="p">{</span>
+    <span class="k">return</span> <span class="s2">"Hello "</span> <span class="o">+</span> <span class="nb">name</span> <span class="o">+</span> <span class="s2">"!"</span>    
+<span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="n">sayHello</span><span class="p">(</span><span class="s2">"Peter"</span><span class="p">))</span> <span class="o">/</span><span class="sr">/ Hello Perter!</span></code></pre></figure>
+
+<h1 id="func-c-nhiu-hn-1-param">Func có nhiều hơn 1 param</h1>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">func</span> <span class="n">sayHelloAgain</span><span class="p">(</span><span class="nb">name</span> <span class="p">:</span> <span class="no">String</span><span class="p">,</span> <span class="ss">anotherName: </span><span class="no">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="no">String</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="s2">"Hello "</span> <span class="o">+</span> <span class="nb">name</span> <span class="o">+</span> <span class="s2">", "</span> <span class="o">+</span> <span class="n">anotherName</span>
+<span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span> <span class="n">sayHelloAgain</span><span class="p">(</span><span class="s2">"Peter"</span><span class="p">,</span> <span class="ss">anotherName: </span><span class="s2">"Tom"</span><span class="p">))</span> <span class="o">/</span><span class="sr">/ Hello Peter, Tom</span></code></pre></figure>
+
+<p>ở param thứ 2 ta phải viết thêm cái tên biến ở đằng trước. Cái này để làm rõ nghĩa của hàm, nếu không viết thì sẽ báo lỗi.
+Ta có thể làm rõ nghĩa của cả param đầu tiên bằng cách cho thêm external name. Mỗi khi thêm external name thì ta bắt buộc phải sử dụng nó khi gọi hàm.
+Ở ví dụ dưới đây external name là <em>to</em> và <em>and</em></p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">func</span> <span class="n">sayHello</span><span class="p">(</span><span class="n">to</span> <span class="n">person</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="ow">and</span> <span class="n">anotherPerson</span><span class="p">:</span> <span class="n">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">String</span> 
+<span class="p">{</span>
+    <span class="k">return</span> <span class="s">"Hello </span><span class="err">\</span><span class="s">(person) and </span><span class="err">\</span><span class="s">(anotherPerson)!"</span>
+<span class="p">}</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sayHello</span><span class="p">(</span><span class="n">to</span><span class="p">:</span> <span class="s">"Bill"</span><span class="p">,</span> <span class="ow">and</span><span class="p">:</span> <span class="s">"Ted"</span><span class="p">))</span> <span class="o">//</span> <span class="n">Hello</span> <span class="n">Bill</span> <span class="ow">and</span> <span class="n">Ted</span><span class="err">!</span></code></pre></figure>
+
+<p>Nếu ta muốn viết gọn như C thì có thể thêm _ để loại bỏ việc phải viết thêm tên biến nếu có hơn 2 param.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">func</span> <span class="n">someFunction</span><span class="p">(</span><span class="n">firstParameterName</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">_</span> <span class="n">secondParameterName</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> 
+<span class="p">{</span>
+    <span class="o">//</span> <span class="n">function</span> <span class="n">body</span> <span class="n">goes</span> <span class="n">here</span>
+    <span class="o">//</span> <span class="n">firstParameterName</span> <span class="ow">and</span> <span class="n">secondParameterName</span> <span class="n">refer</span> <span class="n">to</span>
+    <span class="o">//</span> <span class="n">the</span> <span class="n">argument</span> <span class="n">values</span> <span class="k">for</span> <span class="n">the</span> <span class="n">first</span> <span class="ow">and</span> <span class="n">second</span> <span class="n">parameters</span>
+<span class="p">}</span>
+<span class="n">someFunction</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span></code></pre></figure>
+
+<p>Ở ví dụ trên _ được viết trước secondParameterName nên ta không phải viết
+&gt; someFunction(1, secondParameterName:2)</p>
+
+<h1 id="func-vi-param-dng-">Func với param dạng …</h1>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">func</span> <span class="n">arithmeticMean</span><span class="p">(</span><span class="n">numbers</span><span class="p">:</span> <span class="n">Double</span><span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Double</span> <span class="p">{</span>
+    <span class="n">var</span> <span class="n">total</span><span class="p">:</span> <span class="n">Double</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="p">{</span>
+        <span class="n">total</span> <span class="o">+=</span> <span class="n">number</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">total</span> <span class="o">/</span> <span class="n">Double</span><span class="p">(</span><span class="n">numbers</span><span class="o">.</span><span class="n">count</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">arithmeticMean</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="o">//</span> <span class="mf">3.0</span></code></pre></figure>
+
+<p>Với kiểu này các biến sẽ được đưa vào một array tên là numbers, Ai làm objective c rồi chắc quen thuộc với hàm kiểu này. Để triển khai nó trên objective c thì phức tạp (liên quan đến con trỏ) nhưng trên swift thì đơn giản hơn rất nhiều.
+Lưu ý: tất cả những param truyền vào phải cùng một kiểu dữ liệu.</p>
+
+<h1 id="thay-i-gi-tr-param-trong-func">Thay đổi giá trị param trong func</h1>
+<p>Theo mặc định, param truyền vào sẽ là const, tức là ta không thể thay đổi giá trị của nó. Để thay đổi có hai cách, cách đầu tiên là sử dụng keyword var như ở ví dụ sau</p>
+
+<p>var minMaxValue = minMax([2,1,5,9,8])!;
+print(minMaxValue.1); // max</p>
+
+<p>let minAndMax = minMax([]);
+print(minAndMax?.min);</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">func</span> <span class="n">alignRight</span><span class="p">(</span><span class="n">var</span> <span class="n">string</span><span class="p">:</span> <span class="n">String</span><span class="p">,</span> <span class="n">totalLength</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">pad</span><span class="p">:</span> <span class="n">Character</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">String</span> <span class="p">{</span>
+    <span class="n">let</span> <span class="n">amountToPad</span> <span class="o">=</span> <span class="n">totalLength</span> <span class="o">-</span> <span class="n">string</span><span class="o">.</span><span class="n">characters</span><span class="o">.</span><span class="n">count</span>
+    <span class="k">if</span> <span class="n">amountToPad</span> <span class="o">&lt;</span> <span class="mi">1</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">string</span>
+    <span class="p">}</span>
+    <span class="n">let</span> <span class="n">padString</span> <span class="o">=</span> <span class="n">String</span><span class="p">(</span><span class="n">pad</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="mf">1.</span><span class="o">..</span><span class="n">amountToPad</span> <span class="p">{</span>
+        <span class="n">string</span> <span class="o">=</span> <span class="n">padString</span> <span class="o">+</span> <span class="n">string</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">string</span>
+<span class="p">}</span>
+<span class="n">var</span> <span class="n">originalString</span> <span class="o">=</span> <span class="s">"hello"</span>
+<span class="n">var</span> <span class="n">paddedString</span> <span class="o">=</span> <span class="n">alignRight</span><span class="p">(</span><span class="n">originalString</span><span class="p">,</span> <span class="n">totalLength</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="n">pad</span><span class="p">:</span> <span class="s">"-"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">originalString</span><span class="p">,</span> <span class="n">terminator</span><span class="p">:</span><span class="s">""</span><span class="p">)</span> <span class="o">//</span> <span class="n">hello</span>
+<span class="k">print</span><span class="p">(</span><span class="n">paddedString</span><span class="p">,</span> <span class="n">terminator</span><span class="p">:</span><span class="s">""</span><span class="p">)</span> <span class="o">//</span> <span class="o">-----</span><span class="n">hello</span></code></pre></figure>
+
+<p>Ở đây ta thay đổi giá trị của originalString trong thân func alignRight.
+Tuy nhiên có lưu ý nho nhỏ, giá trị của originalString ở ngoài func alignRight sẽ không bị thay đổi theo. Vậy để thay đổi giá trị của originalString ta phải làm sao? Ta sử dụng cách thứ hai là In-Out param.</p>
+
+<h1 id="in-out-param">In-Out param</h1>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">func</span> <span class="n">swapTwoInts</span><span class="p">(</span><span class="n">inout</span> <span class="n">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">inout</span> <span class="n">_</span> <span class="n">b</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">let</span> <span class="n">temporaryA</span> <span class="o">=</span> <span class="n">a</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">b</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">temporaryA</span>
+<span class="p">}</span>
+<span class="n">var</span> <span class="n">someInt</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">var</span> <span class="n">anotherInt</span> <span class="o">=</span> <span class="mi">107</span>
+<span class="n">swapTwoInts</span><span class="p">(</span><span class="o">&amp;</span><span class="n">someInt</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">anotherInt</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"someInt is now </span><span class="err">\</span><span class="s">(someInt), and anotherInt is now </span><span class="err">\</span><span class="s">(anotherInt)"</span><span class="p">)</span>
+<span class="o">//</span> <span class="n">prints</span> <span class="s">"someInt is now 107, and anotherInt is now 3</span></code></pre></figure>
+
+<p>Khi gọi những hàm có keyword inout ta phải thêm &amp; đằng trước tên biến.</p>
+
+<p>Đây là những điều cơ bản nhất khi triển khai 1 func trong swift. Để đi sâu hơn, bạn nên tham khảo tài liệu của apple.</p>
+
+<p>P/S: những ví dụ trên tham khảo trong swift 2.0 programming của apple. Tài liệu này mới cập nhật, hình như chưa có bản pdf. <img class="emoji" title=":stuck_out_tongue:" alt=":stuck_out_tongue:" src="https://assets.github.com/images/icons/emoji/unicode/1f61b.png" height="20" width="20" align="absmiddle" /></p>
+
+            </div>
+        </article>
+        <div class="cf"></div>
+        <div class="row text-center">
+            <section class="notepad-post-share">
+                <a class="twitter-icon" href="https://twitter.com/intent/tweet?text=&quot;tạo func trong swift&quot;%20/swift/2016/02/18/tao-func-trong-swifift/%20via%20&#64;viet142"
+                    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a class="facebook-icon" href="https://www.facebook.com/sharer/sharer.php?u=/swift/2016/02/18/tao-func-trong-swifift/"
+                    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a class="google-icon" href="https://plus.google.com/share?url=/swift/2016/02/18/tao-func-trong-swifift/"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+            </section>
+        </div>
+        <div class="cf"></div>
+        
+            <div class="notepad-author-info">
+                <div class="row">
+                    <section class="notepad-post-author small-12 columns">
+                        
+                            <img src="/images/profile.png" class="notepad-post-author-avatar" alt="GG4aCrossover's photo">
+                        
+                        
+                            <span class="author-label">Author</span>
+                            <h1>GG4aCrossover</h1>
+                        
+                        
+                            <p><a href="mailto:hoangquocviet1402@gmail.com" class="author-website">hoangquocviet1402@gmail.com</a>
+
+			    <iframe src="//www.facebook.com/plugins/follow?href=https%3A%2F%2Fwww.facebook.com%2Fameyjadiye&amp;layout=standard&amp;show_faces=true&amp;colorscheme=light&amp;width=450&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px;" allowTransparency="true"></iframe> 
+			    </p>
+                        
+                        
+                            <p>Coder nhân dân, thi thoảng viết về IOS và những điều thú vị khác nữa.</p>
+                        
+                    </section>
+                </div>
+            </div>
+ 
+        
+        <div class="cf"></div>
+        
+        <div class="cf"></div>
+
+    <footer class="notepad-site-footer">
+    <div class="copyright">
+        <section>All content copyright <a href="/about">GG4aCrossover</a> &copy; 2016 &bull; All rights reserved.</section>
+	<p><a href='http://www.catb.org/hacker-emblem/' target="_blank"><img src='/assets/img/hacker.png' alt='hacker emblem' /></a>
+          <a href="http://endsoftpatents.org/innovating-without-patents" target="_blank"><img style="border-width:0" src="/assets/img/patent-free.png"></a></p>
+    </div>
+    <div class="social-icons">
+        
+        
+        <a href="http://twitter.com/viet142">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-twitter fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        <a href="">
+            <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x fa-inverse"></i>
+                <i class="fa fa-google-plus fa-stack-1x"></i>
+            </span>
+        </a>
+        
+        
+        
+        
+    </div>
+    
+    <div class="cf"></div>
+</footer>
+ 
+</main>    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
+    <script src="/assets/js/vendor/modernizr.js"></script>
+    <script src="/assets/js/foundation.min.js"></script>
+    
+    <script src="/assets/js/notepad.js"></script>
+    <script src="/assets/js/scripts.min.js"></script>
+    <script src="/assets/js/vendor/nprogress.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/sigma.js/1.0.3/sigma.min.js"></script>
+
+    <script>
+      $(document).foundation();
+    </script>
+
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '', 'auto');
+  ga('require', 'displayfeatures');
+  ga('send', 'pageview');
+
+</script>
+
+<script>NProgress.start();var interval=setInterval(function(){NProgress.inc()},1000);jQuery(window).load(function(){clearInterval(interval);NProgress.done()});jQuery(window).unload(function(){NProgress.start()});</script>
+ 
+</body>
+</html>
