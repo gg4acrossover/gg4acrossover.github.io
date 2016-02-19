@@ -2,27 +2,27 @@ callback([
 
   {
     "text": "Các thuộc tính của property trong objective-c!",
-    "href": "http://gg4acrossover.github.io/basic/2016/02/15/cac-thuoc-tinh-cua-property/"
+    "href": "/basic/2016/02/15/cac-thuoc-tinh-cua-property/"
   } ,
 
   {
     "text": "Enum Flag C++",
-    "href": "http://gg4acrossover.github.io/2016/02/16/enum-flag-c/"
+    "href": "/2016/02/16/enum-flag-c/"
   } ,
 
   {
     "text": "ưu tiên toán tử",
-    "href": "http://gg4acrossover.github.io/c++/2016/02/18/uu-tien-toan-tu/"
+    "href": "/c++/2016/02/18/uu-tien-toan-tu/"
   } ,
 
   {
     "text": "C++11 những cái hay dùng",
-    "href": "http://gg4acrossover.github.io/c++/2016/02/18/c-nhung-cai-hay-dung/"
+    "href": "/c++/2016/02/18/c-nhung-cai-hay-dung/"
   } ,
 
   {
     "text": "tạo func trong swift",
-    "href": "http://gg4acrossover.github.io/swift/2016/02/18/tao-func-trong-swifift/"
+    "href": "/swift/2016/02/18/tao-func-trong-swifift/"
   } 
 
 ])

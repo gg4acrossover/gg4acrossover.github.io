@@ -1,62 +1,66 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>http://gg4acrossover.github.io</loc>
+        <loc></loc>
     </url>
     
     
     <url>
-        <loc>http://gg4acrossover.github.io/404/</loc>
+        <loc>/404/</loc>
     </url>
     
     <url>
-        <loc>http://gg4acrossover.github.io/about/index.html</loc>
+        <loc>/about/index.html</loc>
     </url>
     
     <url>
-        <loc>http://gg4acrossover.github.io/categories/index.html</loc>
+        <loc>/categories/index.html</loc>
     </url>
     
     <url>
-        <loc>http://gg4acrossover.github.io/</loc>
+        <loc>/feed.xml</loc>
     </url>
     
     <url>
-        <loc>http://gg4acrossover.github.io/links.jsonp</loc>
+        <loc>/</loc>
     </url>
     
     <url>
-        <loc>http://gg4acrossover.github.io/search.json</loc>
+        <loc>/links.jsonp</loc>
     </url>
     
     <url>
-        <loc>http://gg4acrossover.github.io/sitemap.xml</loc>
+        <loc>/search.json</loc>
     </url>
     
     <url>
-        <loc>http://gg4acrossover.github.io/tags/index.html</loc>
+        <loc>/sitemap.xml</loc>
+    </url>
+    
+    <url>
+        <loc>/tags/index.html</loc>
     </url>
     
 
     
     <url>
-        <loc>http://gg4acrossover.github.io/swift/2016/02/18/tao-func-trong-swifift/</loc>
+        <loc>/swift/2016/02/18/tao-func-trong-swifift/</loc>
     </url>
     
     <url>
-        <loc>http://gg4acrossover.github.io/c++/2016/02/18/c-nhung-cai-hay-dung/</loc>
+        <loc>/c++/2016/02/18/c-nhung-cai-hay-dung/</loc>
     </url>
     
     <url>
-        <loc>http://gg4acrossover.github.io/c++/2016/02/18/uu-tien-toan-tu/</loc>
+        <loc>/c++/2016/02/18/uu-tien-toan-tu/</loc>
     </url>
     
     <url>
-        <loc>http://gg4acrossover.github.io/2016/02/16/enum-flag-c/</loc>
+        <loc>/2016/02/16/enum-flag-c/</loc>
     </url>
     
     <url>
-        <loc>http://gg4acrossover.github.io/basic/2016/02/15/cac-thuoc-tinh-cua-property/</loc>
+        <loc>/basic/2016/02/15/cac-thuoc-tinh-cua-property/</loc>
     </url>
     
 </urlset>
