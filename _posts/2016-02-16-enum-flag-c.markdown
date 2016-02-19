@@ -2,6 +2,7 @@
 layout: post
 title: "Enum Flag C++"
 date: 2016-02-16T08:50:02+07:00
+categories: c++
 ---
 Hôm nọ đọc trên DNH có bài hướng dẫn về bit field
 

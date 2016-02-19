@@ -2,7 +2,7 @@
 layout: post
 title: C++11 những cái hay dùng
 date: 2016-02-18T16:06:32+05:30
-categories: C++
+categories: c++
 ---
 
 Bài tham khảo từ link: 

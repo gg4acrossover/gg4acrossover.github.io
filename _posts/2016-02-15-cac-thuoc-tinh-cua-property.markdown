@@ -2,7 +2,7 @@
 layout: post
 title:  "Các thuộc tính của property trong objective-c!"
 date:   2016-02-15 11:54:50 +0700
-categories: basic
+categories: objc
 ---
 Thời gian đầu làm việc với obj-c mình khá băn khoăn trong việc sử dụng các thuộc tính trong property như strong, weak, copy, assign. Nhân lúc rảnh rỗi sinh nông nổi, mình giới thiệu qua về vấn đề này để những ai mới làm quen với obj-c sẽ tiếp cận nhanh hơn.
 

@@ -61,9 +61,9 @@ kramdown:
   toc_levels: 1..6
   enable_coderay: false
 
-  # coderay:
+  #coderay:
   #  coderay_line_numbers: 
-  #  coderay_line_numbers_start: 1
+  #  coderay_line_numbers_start: 1..6
   #  coderay_tab_width: 4
   #  coderay_bold_every: 10
   #  coderay_css: class
