@@ -1,276 +1,570 @@
-<!DOCTYPE html>
-    
 
- <html lang="en"> 
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-	<meta name="generator" content="Hugo 0.52" />
-        <title></title>
-    
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hugo Responsive Resume/CV Theme for Developers">
-    <meta name="author" content="Pavel Kanyshev">
-    <link rel="shortcut icon" href="favicon.ico">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    
-    <link rel="stylesheet" href="http://gg4acrossover.github.io/assets/plugins/bootstrap/css/bootstrap.min.css">
-    
-    <link rel="stylesheet" href="http://gg4acrossover.github.io/assets/plugins/font-awesome/css/font-awesome.css">
+	<meta name="generator" content="Hugo 0.80.0" />
+
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+<script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', '');
+</script>
+
+
+<title></title>
+<style>
+     
+    .rad-fade-in {
+        will-change: opacity, transform;
+        animation-name: rad-fade-in-fallback;
+        animation-duration: 5s;
+        animation-fill-mode: both;
+    }
+
+    @keyframes rad-fade-in-fallback {
+        0% {
+            opacity: 0;
+        }
+
+        75% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .fonts-loaded .rad-fade-in.rad-waiting {
+        animation-name: none;
+        opacity: 0;
+    }
+
+    .fonts-loaded .rad-fade-in.rad-animate {
+        animation-name: rad-fade-in;
+        animation-duration: 1.1s;
+        animation-fill-mode: both;
+    }
+
+    @keyframes rad-fade-in {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+     
+    .rad-fade-in-long {
+        will-change: opacity, transform;
+        animation-name: rad-fade-in-long-fallback;
+        animation-duration: 8s;
+        animation-fill-mode: both;
+    }
+
+    @keyframes rad-fade-in-long-fallback {
+        0% {
+            opacity: 0;
+        }
+
+        75% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .fonts-loaded .rad-fade-in-long.rad-waiting {
+        animation-name: none;
+        opacity: 0;
+    }
+
+    .fonts-loaded .rad-fade-in-long.rad-animate {
+        animation-name: rad-fade-in-long;
+        animation-duration: 2s;
+        animation-fill-mode: both;
+    }
+
+    @keyframes rad-fade-in-long {
+        0% {
+            opacity: 0;
+        }
+
+        20% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+     
+    .rad-fade-down {
+        will-change: opacity, transform;
+        animation-name: rad-fade-down-fallback;
+        animation-duration: 5s;
+        animation-fill-mode: both;
+        transform: translateY(-30px);
+    }
+
+    @keyframes rad-fade-down-fallback {
+        0% {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        75% {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .fonts-loaded .rad-fade-down.rad-waiting {
+        animation-name: none;
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    .fonts-loaded .rad-fade-down.rad-animate {
+        animation-name: rad-fade-down;
+        animation-duration: 1.1s;
+    }
+
+    @keyframes rad-fade-down {
+        0% {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+     
+    .rad-scale-down {
+        will-change: opacity, transform;
+        animation-name: rad-scale-down-fallback;
+        animation-duration: 5s;
+        animation-fill-mode: both;
+        transform-origin: 50% 0;
+    }
+
+    @keyframes rad-scale-down-fallback {
+        0% {
+            opacity: 0;
+            transform: scaleY(0.95);
+        }
+
+        75% {
+            opacity: 0;
+            transform: scaleY(0.95);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scaleY(1);
+        }
+    }
+
+    .fonts-loaded .rad-scale-down.rad-waiting {
+        animation-name: none;
+        opacity: 0;
+        transform: scaleY(0.95);
+    }
+
+    .fonts-loaded .rad-scale-down.rad-animate {
+        animation-name: rad-scale-down;
+        animation-duration: 1.1s;
+        animation-fill-mode: both;
+    }
+
+    @keyframes rad-scale-down {
+        0% {
+            opacity: 0;
+            transform: scaleY(0.95);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scaleY(1);
+        }
+    }
+</style>
+
+
+<link rel="stylesheet" href="https://gg4acrossover.github.io/css/main.css"/>
+
+<link rel="stylesheet" href="https://gg4acrossover.github.io/css/rad-icons.css"/>
+
+<link rel="stylesheet" href="https://gg4acrossover.github.io/css/custom.css"/>
+
 
     
-    <link id="theme-style" rel="stylesheet" href="http://gg4acrossover.github.io/assets/css/styles.css">
-	
-    
-	
+
 
 </head>
 
 <body>
-    <div class="wrapper">
 
-            <div class="sidebar-wrapper">
+	<header class="header fixed-top rad-animation-group" id="header">
+  <div class="container rad-fade-in">
+    <nav class="navbar navbar-expand-lg navbar-light p-0">
+      <a class="navbar-brand" href="https://gg4acrossover.github.io/">
+        <span>VietHQ</span>
+        <span>vie</span>
+        
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent, #header"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-		            <div class="profile-container">
-                <img class="profile img-circle" src="http://gg4acrossover.github.io/assets/images/profile.jpg" alt="" />
-                <h1 class="name">Hoàng Quốc Việt</h1>
-                <h3 class="tagline">IOS Developer</h3>
-            </div>
-
-
-		
-
-		
-		            <div class="contact-container container-block">
-                <ul class="list-unstyled contact-list">
-				
-                    <li class="email"><i class="fa fa-envelope"></i><a href="mailto:%20hoangquocviet1402@gmail.com">hoangquocviet1402@gmail.com</a></li>
-				
-                    <li class="website"><i class="fa fa-globe"></i><a href="//gg4acrossover.github.io/hugosite">gg4acrossover.github.io/hugosite</a></li>
-				
-                    <li class="linkedin"><i class="fa fa-linkedin"></i><a href="//linkedin.com/in/viethoangquoc1402">linkedin.com/in/viethoangquoc1402</a></li>
-				
-                    <li class="github"><i class="fa fa-github"></i><a href="//github.com/gg4acrossover">github.com/gg4acrossover</a></li>
-				
-                    <li class="twitter"><i class="fa fa-twitter"></i><a href="//twitter.com/viet142">@viet142</a></li>
-				
-                </ul>
-            </div>
-		
-
-		
-		            <div class="education-container container-block">
-                <h2 class="container-block-title">Education</h2>
-				
-                <div class="item">
-                    <h4 class="degree">Kỹ sư CNTT</h4>
-                    <h5 class="meta">Học viện kỹ thuật quân sự</h5>
-                    <div class="time">2011 - 2013</div>
-                </div>
-				
-                <div class="item">
-                    <h4 class="degree">Cử nhân CNTT</h4>
-                    <h5 class="meta">Viện đại học Mở</h5>
-                    <div class="time">2006 - 2009</div>
-                </div>
-				
-            </div>
-
-		
-
-		
-		            <div class="language-container container-block">
-                <h2 class="container-block-title">Languages</h2>
-                <ul class="list-unstyled interests-list">
-				
-                    <li>Tiếng Việt <span class="lang-desc">(Tiếng mẹ đẻ :D)</span></li>
-				
-                    <li>English <span class="lang-desc">(Giao tiếp cơ bản)</span></li>
-				
-                </ul>
-            </div>
-
-		
-
-		
-		            <div class="interests-container container-block">
-                <h2 class="container-block-title">Interests</h2>
-                <ul class="list-unstyled interests-list">
-				
-                    <li>Đọc sách</li>
-				
-                    <li>Bi.a</li>
-				
-                    <li>Bóng rổ</li>
-				
-                </ul>
-            </div>
-
-		
-
-        </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-lg-auto">
+          <li class="nav-item">
+            <script>
+              function goToTop() {
+                document.body.scrollTop = 0; 
+                document.documentElement.scrollTop = 0; 
+              }
+            </script>
+            <a class="nav-link" href="#home" onclick="javascript:goToTop()">HOME</a>
+          </li>
+          
+          <li class="nav-item">
+            <a data-scroll class="nav-link" href="#about"
+              >ABOUT</a
+            >
+          </li>
+          
+          <li class="nav-item">
+            <a data-scroll class="nav-link" href="#experience"
+              >EXPERIENCE</a
+            >
+          </li>
+          
+          <li class="nav-item">
+            <a data-scroll class="nav-link" href="https://gg4acrossover.github.io/hugosite/"
+              >BLOG</a
+            >
+          </li>
+          
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
 
 
-	<div class="main-wrapper">
-
-    
-	            <section class="section summary-section">
-                <h2 class="section-title"><i class="fa fa-user"></i>Career Profile</h2>
-                <div class="summary">
-                    <p>Tôi có hơn 6 năm kinh nghiệm trong ngành lập trình, đặc biệt trong lĩnh vực iOS. Thủa mới chập chững code, tôi làm game sử dụng framework cocos2dx. Đấy là bước tạo đà, mở ra cách cửa để tôi trải nghiệm nghề lập trình nói chung và mobile nói riêng. Sau này tôi đã &ldquo;mải mê chinh chiến&rdquo; trên nhiều mặt trận khác nhau, từ outsource đến làm product. Cảm nhận riêng cá nhân, tôi thấy mình bắt nhịp khá nhanh với môi trường mới và cũng đã tạo ra nhiều sản phẩm tương đối tốt, phong phú về chức năng: mạng xã hội, tin tức, thương mại điện tử, truyền hình,&hellip;Ngoài công việc trên công ty, tôi cũng hay đọc sách, bổ sung kiến thức cho công việc, đồng thời tôi cũng tạo blog riêng để chia sẻ kinh nghiệm lập trình cho cộng đồng.</p>
-                </div>
-            </section>
-
-    
-
-    
-                <section class="section experiences-section">
-                <h2 class="section-title"><i class="fa fa-briefcase"></i>Experiences</h2>
-
-				
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">IOS Developer</h3>
-                            <div class="time">2017 - Present</div>
-                        </div>
-                        <div class="company">VTVCab</div>
-                    </div>
-                    <div class="details">
-                        <p>Làm các phần mềm liên quan đến play video. Tìm hiểu và tích hợp thư viện của đối tác vào hệ thống của trung tâm. Họp đưa ra giải pháp về công nghệ để áp dụng vào các ứng dụng mới của công ty. Review sản phẩm bên B.</p>
-                    </div>
-                </div>
-				
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">Mobile Leader</h3>
-                            <div class="time">2016 - 2017</div>
-                        </div>
-                        <div class="company">Seta</div>
-                    </div>
-                    <div class="details">
-                        <p>Làm product chuyên về thương mại điện tử. Sử dụng các công nghệ SignalR, KVO/KVC, custom layout vào trong project. Tạo base ứng dụng, review code của thành viên trong đội. Tìm hiểu requirement dự án và chia task. Đưa ra giải pháp công nghệ với các vấn đề gặp phải khi làm việc.</p>
-                    </div>
-                </div>
-				
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">IOS Deleloper, team leader</h3>
-                            <div class="time">2014 - 2016</div>
-                        </div>
-                        <div class="company">VNext</div>
-                    </div>
-                    <div class="details">
-                        <p>Lập trình game, ứng dụng outsource của công ty. Làm team leader 1 dự án về mạng xã hội ở bên Nhật. Tiếp xúc, làm quen với cách làm việc ở môi trường Nhật như horenso, kaizen.</p>
-                    </div>
-                </div>
-				
-                <div class="item">
-                    <div class="meta">
-                        <div class="upper-row">
-                            <h3 class="job-title">Cocos2dx developer</h3>
-                            <div class="time">2012 - 2014</div>
-                        </div>
-                        <div class="company">StartUp</div>
-                    </div>
-                    <div class="details">
-                        <p>Lập trình game sử dụng cocos2dx, viết bằng ngôn ngữ C++</p>
-                    </div>
-                </div>
-				
-
-            </section>
-
-    
-
-    
-                <section class="section projects-section">
-                <h2 class="section-title"><i class="fa fa-archive"></i>Projects</h2>
-                <div class="intro">
-                    <p>Đã làm việc với các dự án thương mại điện tử, game, ứng dụng outsource như mạng xã hội, tin tức, học tiếng Nhật, ứng dụng bán quần áo, &hellip;</p>
-                </div>
-				
-                <div class="item">
-                    <span class="project-title"><a href="https://github.com/gg4acrossover/ONNetworkBehavior">Network layer</a></span> - <span class="project-tagline">Opensource về phương pháp xây dựng network base</span>
-                </div>
-				
-                <div class="item">
-                    <span class="project-title"><a href="https://github.com/gg4acrossover/GGBird">GGBird</a></span> - <span class="project-tagline">Game mô phỏng flappy bird, viết trong 3 ngày khi học swift.</span>
-                </div>
-				
-                <div class="item">
-                    <span class="project-title"><a href="https://github.com/gg4acrossover/ONProgressHUD">Progress</a></span> - <span class="project-tagline">Thư viện progress viết bằng swift</span>
-                </div>
-				
-                <div class="item">
-                    <span class="project-title"><a href="https://gg4acrossover.github.io/hugosite/">Blog</a></span> - <span class="project-tagline">Blog công nghệ, viết về những thứ xoay quanh lập trình mobile</span>
-                </div>
-				
-            </section>
-
-    
-
-    
-	            <section class="skills-section section">
-                <h2 class="section-title"><i class="fa fa-rocket"></i>Skills &amp; Proficiency</h2>
-                <div class="skillset">
-				
-                    <div class="item">
-                        <h3 class="level-title">ObjC/Swift</h3>
-                        <div class="level-bar">
-                            <div class="level-bar-inner" data-level="98%">
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="item">
-                        <h3 class="level-title">Javascript</h3>
-                        <div class="level-bar">
-                            <div class="level-bar-inner" data-level="60%">
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="item">
-                        <h3 class="level-title">C&#43;&#43;</h3>
-                        <div class="level-bar">
-                            <div class="level-bar-inner" data-level="80%">
-                            </div>
-                        </div>
-                    </div>
-                
-                    <div class="item">
-                        <h3 class="level-title">Photoshop</h3>
-                        <div class="level-bar">
-                            <div class="level-bar-inner" data-level="60%">
-                            </div>
-                        </div>
-                    </div>
-                
-                </div>
-            </section>
-
-    
-
-	</div>
+	
+	
+<section class="rad-showcase rad-showcase--index rad-animation-group rad-fade-down">
+  <div class="rad-showcase__bg">
+    <img
+      class="lozad img-responsive"
+      src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+      data-src="https://gg4acrossover.github.io/img/showcase/showcase.png"
+      data-srcset="https://gg4acrossover.github.io/img/showcase/showcase.png 1x, https://gg4acrossover.github.io/img/showcase/showcase@2x.png 2x"
+      alt="Showcase keyboard and mouse image"
+    />
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-8 col-lg-7 col-xl-6">
+        <h1 class="display-1">
+          Tự sự của một
+          <br />
+          <span
+            >iOS Engineer</span
+          >
+        </h1>
+        <p class="lead">
+          Tôi đang làm việc tại <a target='_blank' href='https://vpbank.com.vn/'>VPBank</a>, ngân hàng hạnh phúc nhất Việt Nam, đấy là mọi người nói vậy. Tôi thuộc thế hệ tiên phong, một trong những người viết dòng code đầu tiên tạo nên app VPBank Online <b>mới</b>. Tại sao lại <b>mới</b>, tôi sẽ kể bạn nghe khi có dịp, bên những chén trà ấm, bên những điếu thuốc mới châm. Tôi cam đoan với bạn, đó là câu chuyện hay. Còn ở đây, không gian này, là nơi tôi nói về bản thân, về sự nghiệp coder.
+        </p>
+        <a
+          href="mailto:%20viethq@protonmail.com"
+          class="btn btn-primary"
+        >
+          <i class="icon-mail-fill"></i>
+          Contact
+        </a>
+      </div>
     </div>
+    <div class="row platform-links">
+      <div class="col-12">
+        
+        <a href="https://www.linkedin.com/in/viethoangquoc1402" target="_blank"
+          ><i class="icon-linkedin-line"></i
+        ></a>
+        
+        <a href="https://github.com/gg4acrossover" target="_blank"
+          ><i class="icon-github-line"></i
+        ></a>
+        
+        <a href="https://twitter.com/viet142" target="_blank"
+          ><i class="icon-twitter-line"></i
+        ></a>
+        
+      </div>
+    </div>
+  </div>
+  <div class="rad-showcase__bg rad-showcase__bg--mobile">
+    <img
+      class="lozad img-responsive"
+      src="data:image/gif;base64,R0lGODlhBwACAIAAAP///wAAACH5BAEAAAEALAAAAAAHAAIAAAIDjI9YADs="
+      data-src="https://gg4acrossover.github.io/img/showcase/showcase-mobile.jpg"
+      alt="Showcase keyboard and mouse image"
+    />
+  </div>
+</section>
 
-	    <footer class="footer">
-        <div class="text-center">
-                
-                <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small><br>
-				<small class="copyright">2019 &copy; Ported for Hugo by <a href="https://github.com/aerohub" target="_blank">Pavel Kanyshev</a></small>
+
+	
+	
+<section class="section rad-animation-group pb-0" id="about">
+  <div class="container rad-fade-down">
+    <div class="row d-flex flex-column-reverse flex-md-row">
+      <div class="col-12 col-md-12 my-auto my-auto">
+        <h2>Giới thiệu</h2>
+        <p class="lead">
+          <p class="lead"> Tôi tên <b>Việt</b>, là người con, người chồng, người cha. Tôi lập trình iOS hàng ngày để kiếm tiền mua bỉm cho con. Trang web này ra đời từ nhu cầu PR, quảng cáo bản thân :D. Nếu bạn cần tìm một dev có tâm, có tầm thì đừng ngại ngần mà <a href = "mailto: viethq@protonmail.com">contact</a> nhé. Tôi luôn sẵn sàng làm app bạn <b>great again</b>.</p>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+	
+	
+<section class="section section--border-bottom rad-animation-group">
+    <div class="container">
+        <div class="row rad-fade-down">
+            <div class="col-12">
+                <h2>Bằng cấp</h2>
+                <div class="row pt-2 pt-md-4">
+                    
+                    <div class="col-12 col-sm-6 mb-4 mb-sm-0">
+                        <div class="education">
+                            <div class="education__date">2011-2013</div>
+                            <div class="education__title">Học viện kỹ thuật quân sự</div>
+                            <div class="education__degree">
+                                Kỹ sư CNTT, chuyên ngành ứng dụng phần mềm
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-12 col-sm-6 mb-4 mb-sm-0">
+                        <div class="education">
+                            <div class="education__date">2006-2009</div>
+                            <div class="education__title">Viện đại học Mở</div>
+                            <div class="education__degree">
+                                Cử nhân CNTT
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
+</section>
 
 
-                  
-    <script type="text/javascript" src="http://gg4acrossover.github.io/assets/plugins/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="http://gg4acrossover.github.io/assets/plugins/bootstrap/js/bootstrap.min.js"></script>    
+	
+	
+<section id="experience" class="section section--border-bottom rad-animation-group">
+    <div class="container">
+        <div class="row flex-column-reverse flex-md-row rad-fade-down">
+            <div class="col-12 col-sm-6 mt-5 mt-sm-0">
+                
+                <div class="experience">
+                    <div class="experience__date">5/2018 - Hiện tại</div>
+                    <div class="experience__title">Sr. iOS Engineer</div>
+                    <div class="experience__company">VPBank</div>
+                    <div><p class="lead">Làm app <b>VPBank Online</b>, áp dụng <b>clean architecture</b>, sử dụng <b>oop</b>, kết hợp một chút <b>functional programming</b>. Các chức năng chính đảm nhận: login, card,... đưa ra solution cho vấn đề generate model, ui rendering.<br> Ngôn ngữ: swift, objc.</p></div>
+                </div>
+                
+                <div class="experience">
+                    <div class="experience__date">2017 - 2018</div>
+                    <div class="experience__title">Sr. iOS Engineer</div>
+                    <div class="experience__company">VTVCab</div>
+                    <div><p class="lead">Làm app <b>VTVCab On</b>, xoay quanh các chức năng chuyên về video. Sử dụng swift.</p></div>
+                </div>
+                
+                <div class="experience">
+                    <div class="experience__date">2016 - 2017</div>
+                    <div class="experience__title">Mobile team lead</div>
+                    <div class="experience__company">Seta</div>
+                    <div><p class="lead">Làm app <b>thương mại điện tử</b>, ngôn ngữ sử dụng: objc. Công việc đã làm: viết base, quản lý task, đề ra solution cho team dự án. Sử dụng jira, gitlab, qui trình theo agile.</p></div>
+                </div>
+                
+                <div class="experience">
+                    <div class="experience__date">2014 - 2016</div>
+                    <div class="experience__title">iOS developer</div>
+                    <div class="experience__company">Vnext</div>
+                    <div><p class="lead">Làm các dự án outsource, áp dụng kanban cho qui trình làm việc.</p></div>
+                </div>
+                
+                <div class="experience">
+                    <div class="experience__date">2012 - 2014</div>
+                    <div class="experience__title">Cocos2dx developer</div>
+                    <div class="experience__company">Startup game</div>
+                    <div><p class="lead"></p></div>
+                </div>
+                
+            </div>
+            <div class="col-12 col-sm-6">
+                <h2>Kinh nghiệm</h2>
+                <p class="lead">
+                    <p class="lead"> Như đã giới thiệu ở trên, tôi lập trình iOS với hơn <b>7 năm kinh nghiệm</b>. Tôi chú trọng vào việc tạo ra các sản phẩm có chất lượng. Áp dụng các kỹ thuật <b>design pattern, clean architecture, oop, functional programming</b> trong suốt quá trình làm việc để dễ dàng tận dụng lại code và linh hoạt trong việc thay đổi. Tôi đã đi qua nhiều môi trường làm việc khác nhau nên có khả năng thích nghi cao, chịu áp lực công việc, đặc biệt thích hợp với các công ty theo qui trình <b>agile</b>. </p> <p class="lead"> Ngoài công việc, tôi có đam mê đọc sách. Những cuốn bổ trợ cho công việc tôi đã và đang tham khảo: Five lines of code, iOS Programming (apple doc), Refactoring: Improving the Design of Existing Code, C++ primer... Tôi cũng có blog cá nhân chuyên về iOS, C++ và tham gia tích cực vào cộng động iOS. Lúc rảnh rỗi, tôi thích chơi bóng rổ và bi-a để thư giãn và tạo sự cân bằng cho cuộc sống. Bây giờ, với cương vị người cha, tôi cũng thích dành thời gian cuối tuần cho gia đình, con cái. </p>
+                </p>
+                <a href="https://www.linkedin.com/in/viethoangquoc1402" class="btn btn-primary"
+                   target="_blank">
+                    <i class="icon-linkedin-fill"></i>
+                    Linkedin
+                    <i class="icon-arrow-right"></i></a>
+                <a href="https://gg4acrossover.github.io/" class="btn btn-frameless"
+                   target="_blank">
+                    <i class=""></i>
+                    
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+	
+
+	<footer class="footer">
+  <div class="container">
+    <div class="footer__left">
+      <div class="footer__copy">
+        © Raditian. All rights reserved.
+      </div>
+    </div>
+    <div class="footer__links">
+      <ul class="navbar-nav ">
+        <li class="nav-item">
+          <a class="nav-link" href="/">HOME</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="#about">ABOUT</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="#experience">EXPERIENCE</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="https://gg4acrossover.github.io/hugosite/">BLOG</a>
+        </li>
+        
+      </ul>
+    </div>
+    <div class="footer__right">
+      <a href="https://radity.com/"
+        ><img
+          src="https://gg4acrossover.github.io/img/general/design-and-code-radity.png"
+          srcset="https://gg4acrossover.github.io/img/general/design-and-code-radity.png 1x, https://gg4acrossover.github.io/img/general/design-and-code-radity@2x.png 2x"
+          alt="Design &amp; Code - Radity"
+      /></a>
+    </div>
+  </div>
+</footer>
+
+    <script src='https://gg4acrossover.github.io/js/rad-animations.js'></script>
+<script src='https://gg4acrossover.github.io/js/library/lozad.min.js'></script>
+<script>
+  window.addEventListener("load", function() {
+    var observer = window.lozad(".lozad", {
+      rootMargin: window.innerHeight / 2 + "px 0px",
+      threshold: 0.01
+    }); 
+    observer.observe();
+  });
+</script>
+<script src='https://gg4acrossover.github.io/js/library/jquery-3.3.1.slim.min.js'></script>
+<script src='https://gg4acrossover.github.io/js/library/bootstrap.min.js'></script>
+<script src='https://gg4acrossover.github.io/js/sticky-header.js'></script>
+<script src='https://gg4acrossover.github.io/js/library/smooth-scroll.polyfills.min.js'></script>
+<script src='https://gg4acrossover.github.io/js/library/fontfaceobserver.js'></script>
+<script>
+  (function(w) {
     
-    <script type="text/javascript" src="http://gg4acrossover.github.io/assets/js/main.js"></script> 
+    if (w.document.documentElement.className.indexOf("fonts-loaded") > -1) {
+      return;
+    }
+    var fontA = new w.FontFaceObserver("Inter", {
+      weight: 300
+    });
+    var fontB = new w.FontFaceObserver("Inter", {
+      weight: 400
+    });
+    var fontC = new w.FontFaceObserver("Inter", {
+      weight: 500
+    });
+    var fontD = new w.FontFaceObserver("Inter", {
+      weight: 600
+    });
+    var fontE = new w.FontFaceObserver("Inter", {
+      weight: 700
+    });
+    var fontF = new w.FontFaceObserver("Inter", {
+      weight: 900
+    });
+    w.Promise.all([fontA.load(), fontC.load(), fontF.load()]).then(function() {
+      w.document.documentElement.className += " fonts-loaded";
+    });
+  })(this);
+</script>
+<script>
+  const scroll = new SmoothScroll('a[href*="#"]');
+    $('a.nav-link').on('click', () => {
+      const navbar = $('.navbar-collapse');
+      if (navbar && navbar.hasClass('show')) {
+        $('.navbar-toggler').click();
+      }
+    })
+</script>
+
 </body>
+
 </html>
